@@ -870,7 +870,7 @@ async function init() {
     $("compare").title = "";
     $("compare").textContent = "Show recorded runs";
     document.querySelector(".compare-head p").textContent =
-      "Same model, same metric catalogue, same calendar conventions. The only difference: the agent on the right must go through DataReady. These are the recorded runs from the evaluation (gpt-5.5), so they work for any of the 41 eval questions, including the examples on the left.";
+      "Same model, same metric catalogue, same calendar conventions. The only difference: the agent on the right must go through DataReady. These are the recorded runs from the evaluation, so they work for any of the 41 eval questions, including the examples on the left.";
   }
   $("examples").innerHTML = Object.entries(EXAMPLES).map(([group, list]) =>
     `<div><h3>${esc(group)}</h3><div class="chips">${list.map(([q, role]) => `<button class="chip" data-q="${esc(q)}" data-role="${role}">${esc(q)}${role !== "analyst" ? ` <span class="detail">· ${role}</span>` : ""}</button>`).join("")}</div></div>`
@@ -1083,7 +1083,7 @@ async function initReplay(id) {
   $("role").value = replay.question.role;
   $("stage-q").innerHTML = `“${esc(replay.question.question)}”<small>Asked by: ${esc(context.roles[replay.question.role])} · Demo clock: Thu 22 Oct 2026, 10:00 IST</small>`;
   const when = new Date(replay.lanes.baseline.run_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
-  $("stage-note").textContent = `Replay of a recorded eval run (${replay.question.id}, ${when}, ${replay.lanes.baseline.model}). Tool calls and answers are shown exactly as recorded.`;
+  $("stage-note").textContent = `Replay of a recorded eval run (${replay.question.id}, ${when}). Tool calls and answers are shown exactly as recorded.`;
   $("stage-caption").textContent = "Press Play when you're recording.";
   $("stage-play").addEventListener("click", playReplay);
   replayLane("baseline", replay.lanes.baseline, { working: false });

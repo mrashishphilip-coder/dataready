@@ -46,10 +46,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 section { margin-top: 72px; }
 .lede { font-size: clamp(21px, 3vw, 26px); line-height: 1.4; margin: 22px 0 0; max-width: 640px; }
 .byline { margin-top: 18px; color: var(--muted); font-size: 15px; }
-.try { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.try { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .try a { font-weight: 600; text-decoration: none; padding: 8px 14px; border-radius: 8px; background: var(--ink); color: var(--paper); }
 .try a:hover { background: var(--accent); }
-.try span { color: var(--muted); font-size: 15px; }
+.try a.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.try a.secondary:hover { background: var(--soft); }
 .exhibit-foot { margin: 16px 0 0; font-size: 15px; color: var(--muted); }
 
 /* Result ledger under the hero */
@@ -138,7 +139,7 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
     <h1>DataReady</h1>
     <p class="lede">AI agents rarely fail for lack of data. They fail because nothing checks whether a metric is fit for <em>this</em> question, <em>right now</em>. I built the check, then tested whether a careful agent even needs it.</p>
     <p class="byline">Ashish Philip · Product leader, enterprise AI and data products · <a href="https://www.linkedin.com/in/ashishphilip1992/" target="_blank" rel="noreferrer">LinkedIn</a></p>
-    <p class="try"><a href="https://claude.ai/artifact/UNvaDo9YreN36fV4Uiny3T" target="_blank" rel="noreferrer">Try the working prototype ↗</a> <span>Ask a metric question and see every check.</span></p>
+    <p class="try"><a href="https://claude.ai/artifact/UNvaDo9YreN36fV4Uiny3T" target="_blank" rel="noreferrer">Try the working prototype ↗</a> <a class="secondary" href="https://github.com/mrashishphilip-coder/dataready" target="_blank" rel="noreferrer">View the code on GitHub ↗</a></p>
     <div class="ledger" id="ledger"></div>
   </header>
 
@@ -160,8 +161,8 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
         <tbody>
           <tr><td><b>Semantic layer only</b></td><td>Definitions, access rules</td><td>Gaps, partial loads, failed checks, ambiguous wording</td><td>Necessary, not sufficient</td></tr>
           <tr><td><b>Certified flags in the catalogue</b></td><td>Draft or deprecated metrics</td><td>Anything specific to the request: dates, regions, today's loads</td><td>Too coarse</td></tr>
-          <tr><td><b>Careful prompt + observability tool</b></td><td>Most issues, when the agent looks and weighs them correctly</td><td>A warning the model sees but treats as a footnote</td><td>Cheapest option, so I tested it as the baseline</td></tr>
-          <tr class="chosen"><td><b>Pre-flight readiness check</b></td><td>Request-specific fitness, enforced in code, with the reason</td><td>Can only judge the request it's given (see what I got wrong)</td><td>Built and tested against the baseline</td></tr>
+          <tr><td><b>Careful prompt + observability tool</b></td><td>Most issues, when the agent looks and weighs them correctly</td><td>A warning the model sees but treats as a footnote</td><td>Cheapest option, so I tested it as the comparison</td></tr>
+          <tr class="chosen"><td><b>Pre-flight readiness check</b></td><td>Whether the data fits this exact question, enforced by fixed rules, with the reason</td><td>Can only judge the question as it understood it (see what I got wrong)</td><td>Built and tested against the comparison agent</td></tr>
         </tbody>
       </table>
     </div>
@@ -170,15 +171,15 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
   <section class="col" aria-labelledby="bet">
     <p class="label">The bet</p>
     <h2 id="bet">Interpretation belongs to the model. The decision belongs to code.</h2>
-    <p>A model is good at turning "online GMV for the last 7 days" into a structured request. It is not a reliable judge of whether 27 of 28 expected rows is acceptable. So the model interprets, deterministic checks decide, and the person asking resolves ambiguity.</p>
-    <p><b>What would prove me wrong:</b> a careful agent with the same model, catalogue and tools matching the gate; or the gate blocking questions that had a clean answer. A gate that over-blocks gets switched off.</p>
+    <p>A model is good at turning "online GMV for the last 7 days" into a structured request. It is not a reliable judge of whether 27 of 28 expected rows is acceptable. So the model reads the question, fixed rules decide, and the person asking settles anything ambiguous.</p>
+    <p><b>What would prove me wrong:</b> a careful agent with the same model and tools doing as well as the check; or the check refusing questions that had a good answer. A check that refuses too often gets switched off.</p>
     <div class="flow" role="list" aria-label="How DataReady works">
       <div role="listitem"><b>Question</b><span>"Online GMV for the last 7 days" · asked as analyst</span></div>
       <div role="listitem" class="model"><b>Model interprets</b><span>Metric, period, regions, channels. Lists every metric the words could mean.</span></div>
       <div role="listitem" class="code"><b>Code checks</b><span>Eight checks, scoped to this request's dates, regions and channels.</span></div>
       <div role="listitem" class="code"><b>One decision</b><span>READY with the value and evidence, CLARIFY with options, or BLOCKED with reasons.</span></div>
     </div>
-    <p class="legend"><span><i style="background:var(--accent)"></i>AI model</span><span><i style="background:var(--ink)"></i>Deterministic code</span></p>
+    <p class="legend"><span><i style="background:var(--accent)"></i>AI model</span><span><i style="background:var(--ink)"></i>Fixed rules in code</span></p>
     <table class="checks" aria-label="The eight readiness checks">
       <tbody>
         <tr><td>1</td><td>Meaning</td><td>Exactly one metric definition. "Revenue" could be Finance or Sales, so the person chooses.</td></tr>
@@ -196,7 +197,7 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
   <section class="col" aria-labelledby="exp">
     <p class="label">The experiment</p>
     <h2 id="exp">Same model, same tools. One difference.</h2>
-    <p>I wrote 41 questions against fictional retail data with seven planted problems, and labeled the right response to each: answer, ask, or decline. Two agents ran on the same AI model with the same metric catalogue, synonyms and calendar conventions. The baseline had a query tool, a data-observability tool and a prompt telling it to decline unreliable answers. The gated agent's only data tool was DataReady. Each ran all 41 questions three times.</p>
+    <p>I wrote 41 questions against fictional retail data with seven planted problems, and labeled the right response to each: answer, ask, or decline. Two agents ran on the same AI model with the same metric catalogue, synonyms and calendar conventions. The comparison agent had a tool to query the data, a tool to check data health, and instructions to decline unreliable answers. The gated agent's only data tool was DataReady. Each ran all 41 questions three times.</p>
   </section>
 
   <div class="wide" style="margin-top:24px">
@@ -210,7 +211,7 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
 
   <section class="col" aria-labelledby="results">
     <p class="label">Results</p>
-    <h2 id="results">Zero false approvals with the gate. One, every run, without it.</h2>
+    <h2 id="results">With the check, no wrong numbers. Without it, the same wrong number every run.</h2>
   </section>
   <div class="wide">
     <div class="table-wrap">
@@ -220,7 +221,7 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
   <section class="col" aria-labelledby="found">
     <p class="label">What I found</p>
     <h2 id="found">The careful agent saw the warning and answered anyway</h2>
-    <p>On "Online GMV for the last 7 days", the baseline called the data-health tool, which reported a missing South quality check for 19 October. Its query scanned 27 rows where 28 were expected. In one run it even wrote the problem into its answer. Then it reported ₹44,75,299, about 3.3% short, in all three runs. A gap like that survives a meeting.</p>
+    <p>On "Online GMV for the last 7 days", the comparison agent checked data health and was warned that one region's data for one day was missing. Its own query found 27 of the 28 daily records it expected. In one run it even mentioned the gap in its answer. Then it reported ₹44,75,299, about 3.3% short, in all three runs. A gap like that survives a meeting.</p>
     <p class="quote">A prompt is advice. A gate is policy.</p>
     <div class="pair">
       <div>
@@ -228,7 +229,7 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
         <p>The gated agent made one tool call instead of two or three, used about 23% fewer input tokens, and gave the same answer every run. The safe path became the cheap one.</p>
       </div>
       <div>
-        <h3>The baseline was good</h3>
+        <h3>The comparison agent was good</h3>
         <p>39–40 of 41 is a strong result. The problem is narrower than "agents are reckless": a well-instrumented signal gets seen and ignored, and the miss repeats.</p>
       </div>
     </div>
@@ -236,18 +237,18 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
 
   <section class="col" aria-labelledby="wrong">
     <p class="label">What I got wrong</p>
-    <h2 id="wrong">The baseline caught a flaw in my own product</h2>
+    <h2 id="wrong">The comparison agent caught a flaw in my own product</h2>
     <div class="pair">
       <div>
-        <h3>The gate was over-blocking</h3>
-        <p>In the first run, the baseline answered two questions DataReady had blocked: store orders and average order value for a week when West's <em>returns</em> check failed. Its reasoning: neither metric uses returns. It was right. I made the quality check column-aware, relabeled both questions, and re-ran everything. Version 1 results are kept, not deleted.</p>
+        <h3>My check refused answers it shouldn't have</h3>
+        <p>In the first run, the comparison agent answered two questions DataReady had refused: store orders and average order value for a week when one region's <em>returns</em> data failed a quality check. Its reasoning: neither metric uses returns. It was right. I made quality checks apply only to metrics that use the affected data, corrected both labels, and re-ran everything. The first results are kept, not deleted.</p>
       </div>
       <div>
         <h3>A gate only judges the request it's given</h3>
-        <p>With keyword rules instead of a model, DataReady scored 37 of 41 with no false approvals but four wrong numbers. Each was a date range read as a single day. The data for that day was clean, so every check passed on the wrong scope. The model interpreter fixed all four, and every answer now shows what was understood.</p>
+        <p>With keyword rules instead of a model, DataReady scored 37 of 41: it never gave a number it should have refused, but it gave four wrong numbers. Each was a date range read as a single day. The data for that day was clean, so every check passed on the wrong scope. The model interpreter fixed all four, and every answer now shows what was understood.</p>
       </div>
     </div>
-    <p style="margin-top:18px">I also made the baseline fairer after run 1. It hadn't been given the metric synonyms or calendar conventions the interpreter had, and it scored 34 of 41 with that handicap. Every number on this page is from the fair version.</p>
+    <p style="margin-top:18px">I also made the comparison agent fairer after run 1. It hadn't been given the metric synonyms or calendar conventions the interpreter had, and it scored 34 of 41 with that handicap. Every number on this page is from the fair version.</p>
   </section>
 
   <section class="col" aria-labelledby="next">
@@ -255,9 +256,10 @@ ol.plain li, ul.plain li { margin-bottom: 8px; }
     <h2 id="next">Ship it as a feature, then test it with real metric owners</h2>
     <ol class="plain">
       <li><b>Build it into the semantic layer or catalogue</b>, where definitions, quality results and access rules already live. A standalone product would duplicate them.</li>
-      <li><b>Replay 20 real questions</b> from an analytics team's channel, labeled by the metric owners, and measure false approvals, unnecessary blocks and whether people trust the "what was understood" panel.</li>
+      <li><b>Replay 20 real questions</b> from an analytics team's channel, labeled by the metric owners, and count wrong numbers, needless refusals and whether people trust the "what was understood" panel.</li>
       <li><b>Track one number in production:</b> answers later corrected by a human. If the gate doesn't move it, it isn't earning its place.</li>
     </ol>
+    <p>The code, the 41 labeled questions and every recorded run are on <a href="https://github.com/mrashishphilip-coder/dataready" target="_blank" rel="noreferrer">GitHub</a>, so each number on this page can be checked.</p>
     <p><b>Limits:</b> synthetic data, 41 questions, one model, my own labels. Enough to show the pattern, not to estimate a production error rate. Independent labelers come next.</p>
   </section>
 
@@ -292,8 +294,8 @@ function renderLedger() {
   const b = arm("baseline");
   const saving = Math.round((1 - gatedTokens().in / b.tokens_in) * 100);
   $("ledger").innerHTML = `
-    <div><b>0</b><span>false approvals with the gate, ${DATA.summary.questions} questions × ${g.runs} runs</span></div>
-    <div><b>${b.false_approval.mean} of ${DATA.summary.questions}</b><span>false approval without it, on the same question every run</span></div>
+    <div><b>0</b><span>wrong numbers with the check, ${DATA.summary.questions} questions × ${g.runs} runs</span></div>
+    <div><b>${b.false_approval.mean} of ${DATA.summary.questions}</b><span>wrong number without it, on the same question every run</span></div>
     <div><b>${saving}%</b><span>fewer input tokens per question with the gate</span></div>`;
 }
 
@@ -363,12 +365,12 @@ function show(id) {
   document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.id === id)));
   $("replay").innerHTML = `
     <p class="ask">“${esc(r.question)}”</p>
-    <p class="ask-meta">Asked as: ${esc(r.role)} · question ${esc(r.id)} · ${esc(r.tests)}</p>
+    <p class="ask-meta">Asked as: ${esc(r.role)} · question ${esc(r.id)} of 41</p>
     <p class="expected">The labeled right response: <b>${EXPECT[r.expected]}</b>.</p>
     <div class="lanes">${lane("baseline", r, r.baseline)}${lane("gated", r, r.gated)}</div>`;
 }
 
-const TAB_NAMES = { B10: "Online GMV, last 7 days", B08: "South on 19 October", C01: "Revenue last month", A19: "AOV for West, last week", A04: "Online net revenue, yesterday", B06: "Finance figure, sales role" };
+const TAB_NAMES = { B10: "Online GMV, last 7 days", B08: "A region's missing day", C01: "Revenue last month", A19: "Average order value, one region", A04: "Online net revenue, yesterday", B06: "Finance figure, sales role" };
 $("tabs").innerHTML = DATA.replays.map((r) => `<button class="tab" role="tab" data-id="${r.id}" aria-selected="false">${esc(TAB_NAMES[r.id] ?? r.id)}</button>`).join("");
 $("tabs").addEventListener("click", (e) => { const t = e.target.closest(".tab"); if (t) show(t.dataset.id); });
 renderLedger();
