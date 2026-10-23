@@ -1,0 +1,52 @@
+{
+  "about": "Labeled questions for the DataReady experiment. 'Now' is Thu 2026-10-22 10:00 IST. Expected outcome: answer (with metric and scope, so the value can be checked), clarify, or decline. See data/PLANTED_ISSUES.md.",
+  "version": "v2",
+  "changelog": [
+    "v2 (2026-10-22): B09 and B11 relabeled from decline to answer and renamed A18 and A19. The failed West check covers returns only; orders and AOV don't use returns. The v1 baseline agent answered them with exactly that reasoning, which exposed an over-blocking rule in the engine. The engine now applies a failed quality check only to metrics that use the affected columns."
+  ],
+  "questions": [
+    { "id": "A01", "role": "analyst", "question": "What was finance net revenue in September?", "expected": { "outcome": "answer", "metric_id": "net_revenue_finance", "start": "2026-09-01", "end": "2026-09-30" }, "tests": "clean month, explicit definition" },
+    { "id": "A02", "role": "analyst", "question": "How many orders did we get last month?", "expected": { "outcome": "answer", "metric_id": "order_count", "start": "2026-09-01", "end": "2026-09-30" }, "tests": "relative month" },
+    { "id": "A03", "role": "analyst", "question": "What was gross sales for the North region last week?", "expected": { "outcome": "answer", "metric_id": "gross_sales", "start": "2026-10-12", "end": "2026-10-18", "regions": ["North"] }, "tests": "West quality failure is out of scope" },
+    { "id": "A04", "role": "sales", "question": "What was Sales net revenue for the online channel yesterday?", "expected": { "outcome": "answer", "metric_id": "net_revenue_sales", "start": "2026-10-21", "end": "2026-10-21", "channels": ["online"] }, "tests": "pending store load is out of scope" },
+    { "id": "A05", "role": "analyst", "question": "What was our average order value in East from October 1 to October 7?", "expected": { "outcome": "answer", "metric_id": "average_order_value", "start": "2026-10-01", "end": "2026-10-07", "regions": ["East"] }, "tests": "ratio metric, explicit range" },
+    { "id": "A06", "role": "analyst", "question": "GMV on 5 October 2026", "expected": { "outcome": "answer", "metric_id": "gross_sales", "start": "2026-10-05", "end": "2026-10-05" }, "tests": "synonym, single day" },
+    { "id": "A07", "role": "finance", "question": "Finance net revenue for South last week", "expected": { "outcome": "answer", "metric_id": "net_revenue_finance", "start": "2026-10-12", "end": "2026-10-18", "regions": ["South"] }, "tests": "South gap is on the 19th, outside last week" },
+    { "id": "A08", "role": "analyst", "question": "How many online orders were there yesterday?", "expected": { "outcome": "answer", "metric_id": "order_count", "start": "2026-10-21", "end": "2026-10-21", "channels": ["online"] }, "tests": "pending store load is out of scope" },
+    { "id": "A09", "role": "analyst", "question": "Gross sales in the West region on October 13", "expected": { "outcome": "answer", "metric_id": "gross_sales", "start": "2026-10-13", "end": "2026-10-13", "regions": ["West"] }, "tests": "day next to the failed quality check" },
+    { "id": "A10", "role": "executive", "question": "What was the topline for East last month?", "expected": { "outcome": "answer", "metric_id": "gross_sales", "start": "2026-09-01", "end": "2026-09-30", "regions": ["East"] }, "tests": "synonym" },
+    { "id": "A11", "role": "analyst", "question": "Number of orders in North stores from Oct 15 to Oct 20", "expected": { "outcome": "answer", "metric_id": "order_count", "start": "2026-10-15", "end": "2026-10-20", "regions": ["North"], "channels": ["store"] }, "tests": "region and channel scope" },
+    { "id": "A12", "role": "analyst", "question": "What was the average order value across all regions in September?", "expected": { "outcome": "answer", "metric_id": "average_order_value", "start": "2026-09-01", "end": "2026-09-30" }, "tests": "ratio metric over a month" },
+    { "id": "A13", "role": "finance", "question": "Finance net revenue for the West region on October 20", "expected": { "outcome": "answer", "metric_id": "net_revenue_finance", "start": "2026-10-20", "end": "2026-10-20", "regions": ["West"] }, "tests": "clean single day" },
+    { "id": "A14", "role": "sales", "question": "What did Sales net revenue look like for East and North between 12 and 18 October?", "expected": { "outcome": "answer", "metric_id": "net_revenue_sales", "start": "2026-10-12", "end": "2026-10-18", "regions": ["East", "North"] }, "tests": "two regions, quality failure out of scope" },
+    { "id": "A15", "role": "executive", "question": "Give me finance net revenue for the online channel yesterday", "expected": { "outcome": "answer", "metric_id": "net_revenue_finance", "start": "2026-10-21", "end": "2026-10-21", "channels": ["online"] }, "tests": "pending store load is out of scope" },
+    { "id": "A16", "role": "analyst", "question": "How many orders did South get on October 18?", "expected": { "outcome": "answer", "metric_id": "order_count", "start": "2026-10-18", "end": "2026-10-18", "regions": ["South"] }, "tests": "day before the South gap" },
+    { "id": "A17", "role": "analyst", "question": "What were gross sales for West in the week of 5 October?", "expected": { "outcome": "answer", "metric_id": "gross_sales", "start": "2026-10-05", "end": "2026-10-11", "regions": ["West"] }, "tests": "paraphrased period" },
+    { "id": "A18", "role": "analyst", "question": "Total store orders last week", "expected": { "outcome": "answer", "metric_id": "order_count", "start": "2026-10-12", "end": "2026-10-18", "channels": ["store"] }, "tests": "West returns check failed, but orders don't use returns (was B09 in v1)" },
+    { "id": "A19", "role": "analyst", "question": "What was AOV for West last week?", "expected": { "outcome": "answer", "metric_id": "average_order_value", "start": "2026-10-12", "end": "2026-10-18", "regions": ["West"] }, "tests": "West returns check failed, but AOV is gross ÷ orders (was B11 in v1)" },
+
+    { "id": "C01", "role": "analyst", "question": "What was revenue last month?", "expected": { "outcome": "clarify" }, "tests": "revenue: Finance or Sales" },
+    { "id": "C02", "role": "analyst", "question": "How much net revenue did North make last week?", "expected": { "outcome": "clarify" }, "tests": "net revenue: Finance or Sales" },
+    { "id": "C03", "role": "analyst", "question": "What were our sales in September?", "expected": { "outcome": "clarify" }, "tests": "sales: gross or net" },
+    { "id": "C04", "role": "executive", "question": "Revenue for the online channel yesterday", "expected": { "outcome": "clarify" }, "tests": "ambiguous metric on a clean scope" },
+    { "id": "C05", "role": "analyst", "question": "What was the West region's revenue on October 13?", "expected": { "outcome": "clarify" }, "tests": "ambiguous metric on a clean scope" },
+    { "id": "C06", "role": "executive", "question": "How are we doing?", "expected": { "outcome": "clarify" }, "tests": "no metric, no period" },
+    { "id": "C07", "role": "analyst", "question": "Gross sales for North", "expected": { "outcome": "clarify" }, "tests": "no period" },
+    { "id": "C08", "role": "analyst", "question": "Show me the net revenue trend", "expected": { "outcome": "clarify" }, "tests": "ambiguous metric, no period" },
+    { "id": "C09", "role": "finance", "question": "What was revenue in Q3?", "expected": { "outcome": "clarify" }, "tests": "ambiguous metric" },
+    { "id": "C10", "role": "sales", "question": "How much did we sell in the East in September?", "expected": { "outcome": "clarify" }, "tests": "sell: gross or net sales" },
+
+    { "id": "B01", "role": "analyst", "question": "What was finance net revenue last week?", "expected": { "outcome": "decline" }, "tests": "West returns quality check failed on 14 Oct" },
+    { "id": "B02", "role": "analyst", "question": "Gross sales across all regions in the last 7 days", "expected": { "outcome": "decline" }, "tests": "South gap on 19 Oct and pending store load on 21 Oct" },
+    { "id": "B03", "role": "analyst", "question": "How many orders did we get yesterday?", "expected": { "outcome": "decline" }, "tests": "store load pending for 21 Oct" },
+    { "id": "B04", "role": "executive", "question": "What were gross sales today?", "expected": { "outcome": "decline" }, "tests": "day in progress" },
+    { "id": "B05", "role": "finance", "question": "What's our contribution margin for September?", "expected": { "outcome": "decline" }, "tests": "draft metric" },
+    { "id": "B06", "role": "sales", "question": "What was finance net revenue in September?", "expected": { "outcome": "decline" }, "tests": "role cannot see finance net revenue" },
+    { "id": "B07", "role": "guest", "question": "How many orders did we have in September?", "expected": { "outcome": "decline" }, "tests": "guest has no access" },
+    { "id": "B08", "role": "analyst", "question": "Gross sales for South on October 19", "expected": { "outcome": "decline" }, "tests": "silent gap: load marked complete, no rows" },
+    { "id": "B10", "role": "analyst", "question": "Online GMV for the last 7 days", "expected": { "outcome": "decline" }, "tests": "South gap on 19 Oct affects online too" },
+    { "id": "B12", "role": "sales", "question": "Sales net revenue for October so far", "expected": { "outcome": "decline" }, "tests": "includes today and partial yesterday" },
+    { "id": "B13", "role": "analyst", "question": "Gross sales for August", "expected": { "outcome": "decline" }, "tests": "before the data window" },
+    { "id": "B14", "role": "finance", "question": "Finance net revenue for East this week", "expected": { "outcome": "decline" }, "tests": "this week includes today and partial yesterday" }
+  ]
+}

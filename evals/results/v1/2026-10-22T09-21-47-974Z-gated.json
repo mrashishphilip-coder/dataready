@@ -1,0 +1,2917 @@
+{
+  "arm": "gated",
+  "model": "openai · gpt-5.5",
+  "run_at": "2026-10-22T09:24:39.901Z",
+  "summary": {
+    "total": 41,
+    "counts": {
+      "correct": 41,
+      "false_approval": 0,
+      "wrong_number": 0,
+      "unnecessary_block": 0,
+      "safe_mismatch": 0,
+      "error": 0
+    },
+    "byGroup": {
+      "answer": {
+        "total": 17,
+        "correct": 17
+      },
+      "clarify": {
+        "total": 10,
+        "correct": 10
+      },
+      "decline": {
+        "total": 14,
+        "correct": 14
+      }
+    },
+    "usage": {
+      "input_tokens": 37837,
+      "output_tokens": 5679
+    }
+  },
+  "rows": [
+    {
+      "id": "A01",
+      "question": "What was finance net revenue in September?",
+      "role": "analyst",
+      "tests": "clean month, explicit definition",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 36304662,
+        "message": "Finance net revenue in September was ₹3,63,04,662.\n\nDefinition used: Net revenue (Finance) = gross − returns − tax (v2.1), owned by Priya Nair · Finance Data.",
+        "usage": {
+          "input_tokens": 962,
+          "output_tokens": 115
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was finance net revenue in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Finance): ₹3,63,04,662",
+                "value": 36304662,
+                "value_formatted": "₹3,63,04,662",
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "evidence": {
+                  "rows_used": 240,
+                  "definition": "gross − returns − tax (v2.1)",
+                  "owner": "Priya Nair · Finance Data",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5121
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A02",
+      "question": "How many orders did we get last month?",
+      "role": "analyst",
+      "tests": "relative month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 22152,
+        "message": "Last month (September 1–30, 2026), we got 22,152 orders.\n\nDefinition used: Orders = orders (v1.0), owned by Central Analytics.",
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 105
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many orders did we get last month?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Orders: 22,152 orders",
+                "value": 22152,
+                "value_formatted": "22,152 orders",
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 240,
+                  "definition": "orders (v1.0)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5879
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A03",
+      "question": "What was gross sales for the North region last week?",
+      "role": "analyst",
+      "tests": "West quality failure is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 2951314,
+        "message": "Gross sales for the North region last week (Mon 2026-10-12 to Sun 2026-10-18) were ₹29,51,314, using the Gross sales definition: gross (v1.0).",
+        "usage": {
+          "input_tokens": 942,
+          "output_tokens": 116
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was gross sales for the North region last week?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Gross sales: ₹29,51,314",
+                "value": 2951314,
+                "value_formatted": "₹29,51,314",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 14,
+                  "definition": "gross (v1.0)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "North"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 8144
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A04",
+      "question": "What was Sales net revenue for the online channel yesterday?",
+      "role": "sales",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 636128,
+        "message": "Sales net revenue for the online channel yesterday was ₹6,36,128.\n\nDefinition used: Net revenue (Sales) = gross − returns (v1.4), owned by Arjun Mehta · Sales Operations.",
+        "usage": {
+          "input_tokens": 955,
+          "output_tokens": 115
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was Sales net revenue for the online channel yesterday?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Sales): ₹6,36,128",
+                "value": 636128,
+                "value_formatted": "₹6,36,128",
+                "metric": {
+                  "id": "net_revenue_sales",
+                  "label": "Net revenue (Sales)",
+                  "formula": "gross − returns",
+                  "version": "1.4",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 4,
+                  "definition": "gross − returns (v1.4)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online"
+                  ],
+                  "role": "sales"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6441
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A05",
+      "question": "What was our average order value in East from October 1 to October 7?",
+      "role": "analyst",
+      "tests": "ratio metric, explicit range",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-01",
+        "end": "2026-10-07",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2036.94,
+        "message": "Average order value in East from October 1 to October 7 was ₹2,037 (₹2,036.94).\n\nDefinition used: gross ÷ orders, Average order value v1.2, owned by Central Analytics.",
+        "usage": {
+          "input_tokens": 957,
+          "output_tokens": 125
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was our average order value in East from October 1 to October 7?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Average order value: ₹2,037",
+                "value": 2036.94,
+                "value_formatted": "₹2,037",
+                "metric": {
+                  "id": "average_order_value",
+                  "label": "Average order value",
+                  "formula": "gross ÷ orders",
+                  "version": "1.2",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 14,
+                  "definition": "gross ÷ orders (v1.2)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "average_order_value"
+                  ],
+                  "period": {
+                    "start": "2026-10-01",
+                    "end": "2026-10-07"
+                  },
+                  "regions": [
+                    "East"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5808
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A06",
+      "question": "GMV on 5 October 2026",
+      "role": "analyst",
+      "tests": "synonym, single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-05"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 1406436,
+        "message": "GMV on 5 October 2026 was ₹14,06,436.\n\nDefinition used: Gross sales (gross v1.0), owned by Arjun Mehta · Sales Operations.",
+        "usage": {
+          "input_tokens": 961,
+          "output_tokens": 126
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "GMV on 5 October 2026",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Gross sales: ₹14,06,436",
+                "value": 1406436,
+                "value_formatted": "₹14,06,436",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 8,
+                  "definition": "gross (v1.0)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-05",
+                    "end": "2026-10-05"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5316
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A07",
+      "question": "Finance net revenue for South last week",
+      "role": "finance",
+      "tests": "South gap is on the 19th, outside last week",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 2385139,
+        "message": "Net revenue (Finance) for South last week (Mon 2026-10-12 to Sun 2026-10-18) was ₹23,85,139.\n\nDefinition used: gross − returns − tax (v2.1), owned by Priya Nair · Finance Data.",
+        "usage": {
+          "input_tokens": 965,
+          "output_tokens": 148
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Finance net revenue for South last week",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Finance): ₹23,85,139",
+                "value": 2385139,
+                "value_formatted": "₹23,85,139",
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "evidence": {
+                  "rows_used": 14,
+                  "definition": "gross − returns − tax (v2.1)",
+                  "owner": "Priya Nair · Finance Data",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "South"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "finance"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6078
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A08",
+      "question": "How many online orders were there yesterday?",
+      "role": "analyst",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 274,
+        "message": "Online orders yesterday (2026-10-21) were **274 orders**.\n\nDefinition used: **Orders** = orders (v1.0), owned by Central Analytics.",
+        "usage": {
+          "input_tokens": 916,
+          "output_tokens": 101
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many online orders were there yesterday?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Orders: 274 orders",
+                "value": 274,
+                "value_formatted": "274 orders",
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 4,
+                  "definition": "orders (v1.0)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5563
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A09",
+      "question": "Gross sales in the West region on October 13",
+      "role": "analyst",
+      "tests": "day next to the failed quality check",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-13",
+        "end": "2026-10-13",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 351220,
+        "message": "Gross sales in the West region on October 13 were ₹3,51,220.\n\nDefinition used: gross (v1.0), owned by Arjun Mehta · Sales Operations.",
+        "usage": {
+          "input_tokens": 956,
+          "output_tokens": 124
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Gross sales in the West region on October 13",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Gross sales: ₹3,51,220",
+                "value": 351220,
+                "value_formatted": "₹3,51,220",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 2,
+                  "definition": "gross (v1.0)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-13",
+                    "end": "2026-10-13"
+                  },
+                  "regions": [
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5682
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A10",
+      "question": "What was the topline for East last month?",
+      "role": "executive",
+      "tests": "synonym",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-09-01",
+        "end": "2026-09-30",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 8243208,
+        "message": "East topline last month was ₹82,43,208, using Gross sales (gross v1.0).",
+        "usage": {
+          "input_tokens": 959,
+          "output_tokens": 110
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was the topline for East last month?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Gross sales: ₹82,43,208",
+                "value": 8243208,
+                "value_formatted": "₹82,43,208",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 60,
+                  "definition": "gross (v1.0)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "executive"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6192
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A11",
+      "question": "Number of orders in North stores from Oct 15 to Oct 20",
+      "role": "analyst",
+      "tests": "region and channel scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-15",
+        "end": "2026-10-20",
+        "regions": [
+          "North"
+        ],
+        "channels": [
+          "store"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 782,
+        "message": "Orders in North stores from Oct 15 to Oct 20: **782 orders**.\n\nDefinition used: **Orders** = orders (v1.0), owned by Central Analytics. Data refreshed: 2026-10-22 06:10 +05:30.",
+        "usage": {
+          "input_tokens": 946,
+          "output_tokens": 145
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Number of orders in North stores from Oct 15 to Oct 20",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Orders: 782 orders",
+                "value": 782,
+                "value_formatted": "782 orders",
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 6,
+                  "definition": "orders (v1.0)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-15",
+                    "end": "2026-10-20"
+                  },
+                  "regions": [
+                    "North"
+                  ],
+                  "channels": [
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5768
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A12",
+      "question": "What was the average order value across all regions in September?",
+      "role": "analyst",
+      "tests": "ratio metric over a month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2050.41,
+        "message": "Average order value across all regions in September was ₹2,050.41.\n\nDefinition used: average_order_value = gross ÷ orders (v1.2), owned by Central Analytics.",
+        "usage": {
+          "input_tokens": 948,
+          "output_tokens": 111
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was the average order value across all regions in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Average order value: ₹2,050",
+                "value": 2050.41,
+                "value_formatted": "₹2,050",
+                "metric": {
+                  "id": "average_order_value",
+                  "label": "Average order value",
+                  "formula": "gross ÷ orders",
+                  "version": "1.2",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 240,
+                  "definition": "gross ÷ orders (v1.2)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "average_order_value"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5626
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A13",
+      "question": "Finance net revenue for the West region on October 20",
+      "role": "finance",
+      "tests": "clean single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 307305,
+        "message": "Net revenue (Finance) for the West region on October 20 was ₹3,07,305, using the Finance definition: gross − returns − tax (v2.1).",
+        "usage": {
+          "input_tokens": 982,
+          "output_tokens": 132
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Finance net revenue for the West region on October 20",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Finance): ₹3,07,305",
+                "value": 307305,
+                "value_formatted": "₹3,07,305",
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "evidence": {
+                  "rows_used": 2,
+                  "definition": "gross − returns − tax (v2.1)",
+                  "owner": "Priya Nair · Finance Data",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-10-20",
+                    "end": "2026-10-20"
+                  },
+                  "regions": [
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "finance"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6099
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A14",
+      "question": "What did Sales net revenue look like for East and North between 12 and 18 October?",
+      "role": "sales",
+      "tests": "two regions, quality failure out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "East",
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 4573998,
+        "message": "For East and North between 12 and 18 October, Sales net revenue was ₹45,73,998.\n\nDefinition used: Net revenue (Sales) = gross − returns (v1.4), owned by Arjun Mehta · Sales Operations.",
+        "usage": {
+          "input_tokens": 1001,
+          "output_tokens": 154
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What did Sales net revenue look like for East and North between 12 and 18 October?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Sales): ₹45,73,998",
+                "value": 4573998,
+                "value_formatted": "₹45,73,998",
+                "metric": {
+                  "id": "net_revenue_sales",
+                  "label": "Net revenue (Sales)",
+                  "formula": "gross − returns",
+                  "version": "1.4",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 28,
+                  "definition": "gross − returns (v1.4)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "East",
+                    "North"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "sales"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6369
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A15",
+      "question": "Give me finance net revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 535576,
+        "message": "Net revenue (Finance) for the online channel yesterday (2026-10-21) was ₹5,35,576.\n\nDefinition used: gross − returns − tax (v2.1), owned by Priya Nair · Finance Data.",
+        "usage": {
+          "input_tokens": 961,
+          "output_tokens": 121
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Give me finance net revenue for the online channel yesterday",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Net revenue (Finance): ₹5,35,576",
+                "value": 535576,
+                "value_formatted": "₹5,35,576",
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "evidence": {
+                  "rows_used": 4,
+                  "definition": "gross − returns − tax (v2.1)",
+                  "owner": "Priya Nair · Finance Data",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online"
+                  ],
+                  "role": "executive"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6152
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A16",
+      "question": "How many orders did South get on October 18?",
+      "role": "analyst",
+      "tests": "day before the South gap",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 240,
+        "message": "South had 240 orders on October 18.\n\nDefinition used: Orders = orders (v1.0), owned by Central Analytics.",
+        "usage": {
+          "input_tokens": 938,
+          "output_tokens": 112
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many orders did South get on October 18?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Orders: 240 orders",
+                "value": 240,
+                "value_formatted": "240 orders",
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 2,
+                  "definition": "orders (v1.0)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-18",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "South"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5847
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A17",
+      "question": "What were gross sales for West in the week of 5 October?",
+      "role": "analyst",
+      "tests": "paraphrased period",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-11",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 2690895,
+        "message": "Gross sales for West for the week of 5 October 2026 (Mon 5 Oct–Sun 11 Oct) were ₹26,90,895, using the Gross sales definition: gross (v1.0).",
+        "usage": {
+          "input_tokens": 967,
+          "output_tokens": 133
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What were gross sales for West in the week of 5 October?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Gross sales: ₹26,90,895",
+                "value": 2690895,
+                "value_formatted": "₹26,90,895",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "evidence": {
+                  "rows_used": 14,
+                  "definition": "gross (v1.0)",
+                  "owner": "Arjun Mehta · Sales Operations",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-05",
+                    "end": "2026-10-11"
+                  },
+                  "regions": [
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6434
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C01",
+      "question": "What was revenue last month?",
+      "role": "analyst",
+      "tests": "revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?\n\nOptions:\n- net_revenue_finance — Net revenue (Finance): Revenue after returns and indirect tax. The figure used in financial reporting. Formula: gross − returns − tax\n- net_revenue_sales — Net revenue (Sales): Revenue after returns, before tax. Used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 914,
+          "output_tokens": 147
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was revenue last month?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5380
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C02",
+      "question": "How much net revenue did North make last week?",
+      "role": "analyst",
+      "tests": "net revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean one of two definitions of net revenue. Which would you like?\n\n1. **Net revenue (Finance)** (`net_revenue_finance`): Revenue after returns and indirect tax — used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`): Revenue after returns, before tax — used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 153
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How much net revenue did North make last week?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "North"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5437
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C03",
+      "question": "What were our sales in September?",
+      "role": "analyst",
+      "tests": "sales: gross or net",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean either Gross sales or Net revenue (Sales) for September 2026. Which definition would you like?\n\n1. **Gross sales** (`gross_sales`) — Value of all orders before returns and tax.\n2. **Net revenue (Sales)** (`net_revenue_sales`) — Revenue after returns, before tax; used for sales targets and incentives.",
+        "usage": {
+          "input_tokens": 896,
+          "output_tokens": 138
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What were our sales in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Gross sales or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "gross_sales",
+                    "label": "Gross sales",
+                    "description": "Value of all orders before returns and tax.",
+                    "formula": "gross"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6160
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C04",
+      "question": "Revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean either of these revenue definitions for the online channel yesterday (2026-10-21). Which one should I use?\n\n1. **Net revenue (Finance)** — Revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** — Revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 928,
+          "output_tokens": 163
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Revenue for the online channel yesterday",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online"
+                  ],
+                  "role": "executive"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6550
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C05",
+      "question": "What was the West region's revenue on October 13?",
+      "role": "analyst",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean either of these revenue definitions. Which one would you like?\n\n1. **Net revenue (Finance)** (`net_revenue_finance`) — Revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`) — Revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 154
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was the West region's revenue on October 13?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-13",
+                    "end": "2026-10-13"
+                  },
+                  "regions": [
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5791
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C06",
+      "question": "How are we doing?",
+      "role": "executive",
+      "tests": "no metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "Which metric would you like me to use?\n\n- Net revenue (Finance): Revenue after returns and indirect tax (gross − returns − tax)\n- Net revenue (Sales): Revenue after returns, before tax (gross − returns)\n- Gross sales: Value of all orders before returns and tax\n- Orders: Number of orders placed\n- Average order value: Gross sales divided by orders",
+        "usage": {
+          "input_tokens": 930,
+          "output_tokens": 159
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How are we doing?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "Which metric do you mean?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  },
+                  {
+                    "id": "gross_sales",
+                    "label": "Gross sales",
+                    "description": "Value of all orders before returns and tax.",
+                    "formula": "gross"
+                  },
+                  {
+                    "id": "order_count",
+                    "label": "Orders",
+                    "description": "Number of orders placed.",
+                    "formula": "orders"
+                  },
+                  {
+                    "id": "average_order_value",
+                    "label": "Average order value",
+                    "description": "Gross sales divided by orders.",
+                    "formula": "gross ÷ orders"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "ms": 6013
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C07",
+      "question": "Gross sales for North",
+      "role": "analyst",
+      "tests": "no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "For which period do you want Gross sales for North? The metric definition is Gross sales (id: gross_sales), formula: gross, version 1.0, owner: Arjun Mehta · Sales Operations.",
+        "usage": {
+          "input_tokens": 809,
+          "output_tokens": 149
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Gross sales for North",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "For which period do you want Gross sales?",
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5990
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C08",
+      "question": "Show me the net revenue trend",
+      "role": "analyst",
+      "tests": "ambiguous metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "Which net revenue definition should I use?\n\n1. **Net revenue (Finance)** (`net_revenue_finance`) — Revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`) — Revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 869,
+          "output_tokens": 157
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Show me the net revenue trend",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "ms": 5330
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C09",
+      "question": "What was revenue in Q3?",
+      "role": "finance",
+      "tests": "ambiguous metric",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean either of these revenue definitions for Q3 (2026-07-01 to 2026-09-30). Which one should I use?\n\n1. **Net revenue (Finance)** (`net_revenue_finance`) — Revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`) — Revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 914,
+          "output_tokens": 167
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was revenue in Q3?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-07-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "finance"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 7367
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C10",
+      "question": "How much did we sell in the East in September?",
+      "role": "sales",
+      "tests": "sell: gross or net sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean either of these sales definitions. Which one should I use?\n\n1. **Gross sales** — Value of all orders before returns and tax.\n2. **Net revenue (Sales)** — Revenue after returns, before tax; used for sales targets and incentives.",
+        "usage": {
+          "input_tokens": 916,
+          "output_tokens": 140
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How much did we sell in the East in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Gross sales or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "gross_sales",
+                    "label": "Gross sales",
+                    "description": "Value of all orders before returns and tax.",
+                    "formula": "gross"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "sales"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 7045
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B01",
+      "question": "What was finance net revenue last week?",
+      "role": "analyst",
+      "tests": "West returns quality check failed on 14 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report finance net revenue for last week reliably.\n\nMetric: Net revenue (Finance) — gross − returns − tax (v2.1), owner: Priya Nair · Finance Data.\nPeriod: 2026-10-12 to 2026-10-18.\n\nBlocked because returns reconciliation failed for West on 2026-10-14: returns are 2× the 28-day average, suggesting possible duplicate return events.",
+        "usage": {
+          "input_tokens": 906,
+          "output_tokens": 160
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was finance net revenue last week?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Net revenue (Finance) can't be reported reliably for this request.",
+                "blockers": [
+                  "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+                ],
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6076
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B02",
+      "question": "Gross sales across all regions in the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct and pending store load on 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report gross sales reliably for all regions in the last 7 days (2026-10-15 to 2026-10-21).\n\nReasons:\n- Partial data: the store load for 2026-10-21 is still pending.\n- Missing rows despite completed loads: South online on 2026-10-19 and South store on 2026-10-19.\n\nMetric checked: Gross sales (`gross_sales`), formula `gross`, version 1.0.",
+        "usage": {
+          "input_tokens": 936,
+          "output_tokens": 192
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Gross sales across all regions in the last 7 days",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Gross sales can't be reported reliably for this request.",
+                "blockers": [
+                  "Partial data: the store load for 2026-10-21 is still pending.",
+                  "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+                ],
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-15",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6019
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B03",
+      "question": "How many orders did we get yesterday?",
+      "role": "analyst",
+      "tests": "store load pending for 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report yesterday’s order count reliably yet. The store data load for 2026-10-21 is still pending, so the Orders metric would be incomplete.",
+        "usage": {
+          "input_tokens": 870,
+          "output_tokens": 98
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many orders did we get yesterday?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Orders can't be reported reliably for this request.",
+                "blockers": [
+                  "Partial data: the store load for 2026-10-21 is still pending."
+                ],
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5261
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B04",
+      "question": "What were gross sales today?",
+      "role": "executive",
+      "tests": "day in progress",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report gross sales for today reliably. The period includes 2026-10-22, which is still in progress, and data is loaded only up to yesterday at most.",
+        "usage": {
+          "input_tokens": 881,
+          "output_tokens": 99
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What were gross sales today?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Gross sales can't be reported reliably for this request.",
+                "blockers": [
+                  "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+                ],
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-22",
+                    "end": "2026-10-22"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "executive"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5736
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B05",
+      "question": "What's our contribution margin for September?",
+      "role": "finance",
+      "tests": "draft metric",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t provide a reliable contribution margin for September because contribution margin does not yet have an approved definition. The available metric is still draft only:\n\n- Metric: Contribution margin\n- Formula: not yet approved\n- Version: 0.3-draft\n- Owner: Priya Nair · Finance Data\n\nOnce Finance Data approves the definition, I can report the September value.",
+        "usage": {
+          "input_tokens": 853,
+          "output_tokens": 142
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What's our contribution margin for September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Contribution margin has no approved definition yet.",
+                "metric": {
+                  "id": "contribution_margin",
+                  "label": "Contribution margin",
+                  "formula": "not yet approved",
+                  "version": "0.3-draft",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "contribution_margin"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "finance"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5604
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B06",
+      "question": "What was finance net revenue in September?",
+      "role": "sales",
+      "tests": "role cannot see finance net revenue",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t answer that because your role doesn’t have access to Net revenue (Finance).\n\nMetric: Net revenue (Finance) — formula: gross − returns − tax; owner: Priya Nair · Finance Data.",
+        "usage": {
+          "input_tokens": 888,
+          "output_tokens": 131
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was finance net revenue in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "You don't have access to Net revenue (Finance).",
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "sales"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5950
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B07",
+      "question": "How many orders did we have in September?",
+      "role": "guest",
+      "tests": "guest has no access",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t answer that because your current role (guest) doesn’t have access to the Orders metric. The requested period was September 1–30, 2026.",
+        "usage": {
+          "input_tokens": 846,
+          "output_tokens": 99
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many orders did we have in September?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "You don't have access to Orders.",
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "guest"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5544
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B08",
+      "question": "Gross sales for South on October 19",
+      "role": "analyst",
+      "tests": "silent gap: load marked complete, no rows",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "Gross sales can’t be reported reliably for South on October 19. The data loads are marked complete, but there are no rows for South online or South store on 2026-10-19, so I shouldn’t estimate a number.",
+        "usage": {
+          "input_tokens": 904,
+          "output_tokens": 131
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Gross sales for South on October 19",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Gross sales can't be reported reliably for this request.",
+                "blockers": [
+                  "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+                ],
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-19",
+                    "end": "2026-10-19"
+                  },
+                  "regions": [
+                    "South"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5973
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B09",
+      "question": "Total store orders last week",
+      "role": "analyst",
+      "tests": "West quality check failed (region-level check)",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report total store orders for last week reliably. The orders metric is currently blocked because returns reconciliation failed for West on 2026-10-14: returns are 2× the 28-day average, indicating possible duplicate return events.",
+        "usage": {
+          "input_tokens": 890,
+          "output_tokens": 128
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Total store orders last week",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Orders can't be reported reliably for this request.",
+                "blockers": [
+                  "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+                ],
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5698
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B10",
+      "question": "Online GMV for the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct affects online too",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report Online GMV for the last 7 days reliably. The data readiness check for Gross sales (formula: gross, v1.0; owner: Arjun Mehta · Sales Operations) is blocked because there are no rows for South online on 2026-10-19, even though the loads are marked complete. Period checked: 2026-10-15 to 2026-10-21; channel: online; regions: East, North, South, West.",
+        "usage": {
+          "input_tokens": 908,
+          "output_tokens": 193
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Online GMV for the last 7 days",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Gross sales can't be reported reliably for this request.",
+                "blockers": [
+                  "No rows for South online on 2026-10-19, although the loads are marked complete."
+                ],
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-15",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 7774
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B11",
+      "question": "What was AOV for West last week?",
+      "role": "analyst",
+      "tests": "West quality check failed",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report AOV for West last week reliably. The data quality check failed: returns reconciliation failed for West on 2026-10-14 because returns are 2× the 28-day average, suggesting possible duplicate return events.\n\nMetric requested: Average order value (gross ÷ orders), version 1.2, owner: Central Analytics. Period: 2026-10-12 to 2026-10-18; region: West; channels: online and store.",
+        "usage": {
+          "input_tokens": 908,
+          "output_tokens": 185
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was AOV for West last week?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Average order value can't be reported reliably for this request.",
+                "blockers": [
+                  "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+                ],
+                "metric": {
+                  "id": "average_order_value",
+                  "label": "Average order value",
+                  "formula": "gross ÷ orders",
+                  "version": "1.2",
+                  "owner": "Central Analytics"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "average_order_value"
+                  ],
+                  "period": {
+                    "start": "2026-10-12",
+                    "end": "2026-10-18"
+                  },
+                  "regions": [
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6065
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B12",
+      "question": "Sales net revenue for October so far",
+      "role": "sales",
+      "tests": "includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t reliably report Sales net revenue for October so far.\n\nReasons:\n- The requested period includes today (2026-10-22), which is still in progress; data is loaded only up to yesterday at most.\n- Missing rows for South online and South store on 2026-10-19, even though loads are marked complete.\n- Returns reconciliation failed for West on 2026-10-14: returns are 2× the 28-day average, suggesting possible duplicate return events.\n\nMetric checked: Net revenue (Sales), defined as gross − returns.",
+        "usage": {
+          "input_tokens": 978,
+          "output_tokens": 207
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Sales net revenue for October so far",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Net revenue (Sales) can't be reported reliably for this request.",
+                "blockers": [
+                  "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most.",
+                  "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete.",
+                  "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+                ],
+                "metric": {
+                  "id": "net_revenue_sales",
+                  "label": "Net revenue (Sales)",
+                  "formula": "gross − returns",
+                  "version": "1.4",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-10-01",
+                    "end": "2026-10-22"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "sales"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6878
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B13",
+      "question": "Gross sales for August",
+      "role": "analyst",
+      "tests": "before the data window",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "Gross sales can’t be reported reliably for August. The available data starts on 2026-09-01, but August begins on 2026-08-01, so the requested period is outside the reliable data range.",
+        "usage": {
+          "input_tokens": 896,
+          "output_tokens": 131
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Gross sales for August",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Gross sales can't be reported reliably for this request.",
+                "blockers": [
+                  "Data starts on 2026-09-01; the period begins on 2026-08-01."
+                ],
+                "metric": {
+                  "id": "gross_sales",
+                  "label": "Gross sales",
+                  "formula": "gross",
+                  "version": "1.0",
+                  "owner": "Arjun Mehta · Sales Operations"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "gross_sales"
+                  ],
+                  "period": {
+                    "start": "2026-08-01",
+                    "end": "2026-08-31"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 7575
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B14",
+      "question": "Finance net revenue for East this week",
+      "role": "finance",
+      "tests": "this week includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "Net revenue (Finance) can’t be reported reliably for East this week because the requested period includes today (2026-10-22), which is still in progress. Data is loaded up to yesterday at most, so I shouldn’t estimate a number.\n\nDefinition checked: Net revenue (Finance) = gross − returns − tax, version 2.1, owner Priya Nair · Finance Data.",
+        "usage": {
+          "input_tokens": 909,
+          "output_tokens": 163
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "Finance net revenue for East this week",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Net revenue (Finance) can't be reported reliably for this request.",
+                "blockers": [
+                  "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+                ],
+                "metric": {
+                  "id": "net_revenue_finance",
+                  "label": "Net revenue (Finance)",
+                  "formula": "gross − returns − tax",
+                  "version": "2.1",
+                  "owner": "Priya Nair · Finance Data"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance"
+                  ],
+                  "period": {
+                    "start": "2026-10-19",
+                    "end": "2026-10-22"
+                  },
+                  "regions": [
+                    "East"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "finance"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6031
+      },
+      "verdict": "correct"
+    }
+  ]
+}

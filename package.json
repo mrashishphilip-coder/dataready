@@ -1,0 +1,20 @@
+{
+  "name": "dataready",
+  "version": "0.1.0",
+  "description": "A readiness gate that AI agents call before answering a metric question.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "data": "node scripts/generate-data.js",
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test test/*.test.js",
+    "eval": "node --env-file-if-exists=.env evals/run.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0",
+    "openai": "^7.42.0"
+  }
+}

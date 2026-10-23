@@ -1,0 +1,84 @@
+{
+  "arm": "baseline",
+  "model": "openai · gpt-5.5",
+  "run_at": "2026-10-22T09:20:46.886Z",
+  "summary": {
+    "total": 3,
+    "counts": {
+      "correct": 0,
+      "false_approval": 0,
+      "wrong_number": 0,
+      "unnecessary_block": 0,
+      "safe_mismatch": 0,
+      "error": 3
+    },
+    "byGroup": {
+      "answer": {
+        "total": 1,
+        "correct": 0
+      },
+      "clarify": {
+        "total": 1,
+        "correct": 0
+      },
+      "decline": {
+        "total": 1,
+        "correct": 0
+      }
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "A05",
+      "question": "What was our average order value in East from October 1 to October 7?",
+      "role": "analyst",
+      "tests": "ratio metric, explicit range",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-01",
+        "end": "2026-10-07",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "error",
+        "message": "400 Function tools with reasoning_effort are not supported for gpt-5.5 in /v1/chat/completions. To use function tools, use /v1/responses or set reasoning_effort to 'none'."
+      },
+      "verdict": "error"
+    },
+    {
+      "id": "C01",
+      "question": "What was revenue last month?",
+      "role": "analyst",
+      "tests": "revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "error",
+        "message": "400 Function tools with reasoning_effort are not supported for gpt-5.5 in /v1/chat/completions. To use function tools, use /v1/responses or set reasoning_effort to 'none'."
+      },
+      "verdict": "error"
+    },
+    {
+      "id": "B03",
+      "question": "How many orders did we get yesterday?",
+      "role": "analyst",
+      "tests": "store load pending for 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "error",
+        "message": "400 Function tools with reasoning_effort are not supported for gpt-5.5 in /v1/chat/completions. To use function tools, use /v1/responses or set reasoning_effort to 'none'."
+      },
+      "verdict": "error"
+    }
+  ]
+}

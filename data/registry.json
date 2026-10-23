@@ -1,0 +1,103 @@
+{
+  "registry_version": "2026.10.1",
+  "company": "Acme Retail (fictional)",
+  "now": "2026-10-22T10:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "data_starts": "2026-09-01",
+  "regions": ["North", "South", "East", "West"],
+  "channels": ["online", "store"],
+  "roles": {
+    "finance": "Finance team",
+    "analyst": "Central analytics",
+    "executive": "Leadership",
+    "sales": "Sales team",
+    "guest": "External contractor"
+  },
+  "policy": {
+    "freshness_sla_hours": 24,
+    "assessment_ttl_minutes": 15
+  },
+  "quality_checks": {
+    "row_count": { "description": "Expected number of rows landed", "columns": ["gross", "returns", "tax", "orders"] },
+    "non_negative_amounts": { "description": "No negative amounts", "columns": ["gross", "returns", "tax", "orders"] },
+    "returns_reconciliation": { "description": "Returns reconcile with the returns system", "columns": ["returns"] }
+  },
+  "metrics": [
+    {
+      "id": "net_revenue_finance",
+      "label": "Net revenue (Finance)",
+      "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+      "formula": "gross − returns − tax",
+      "terms": { "gross": 1, "returns": -1, "tax": -1 },
+      "synonyms": ["finance net revenue", "net revenue (finance)", "finance revenue", "reported revenue"],
+      "owner": "Priya Nair · Finance Data",
+      "version": "2.1",
+      "certified": true,
+      "allowed_roles": ["finance", "analyst", "executive"]
+    },
+    {
+      "id": "net_revenue_sales",
+      "label": "Net revenue (Sales)",
+      "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+      "formula": "gross − returns",
+      "terms": { "gross": 1, "returns": -1 },
+      "synonyms": ["sales net revenue", "net revenue (sales)", "net sales"],
+      "owner": "Arjun Mehta · Sales Operations",
+      "version": "1.4",
+      "certified": true,
+      "allowed_roles": ["finance", "analyst", "executive", "sales"]
+    },
+    {
+      "id": "gross_sales",
+      "label": "Gross sales",
+      "description": "Value of all orders before returns and tax.",
+      "formula": "gross",
+      "terms": { "gross": 1 },
+      "synonyms": ["gross sales", "gmv", "gross merchandise value", "topline"],
+      "owner": "Arjun Mehta · Sales Operations",
+      "version": "1.0",
+      "certified": true,
+      "allowed_roles": ["finance", "analyst", "executive", "sales"]
+    },
+    {
+      "id": "order_count",
+      "label": "Orders",
+      "description": "Number of orders placed.",
+      "formula": "orders",
+      "terms": { "orders": 1 },
+      "synonyms": ["orders", "order count", "number of orders", "order volume"],
+      "owner": "Central Analytics",
+      "version": "1.0",
+      "certified": true,
+      "allowed_roles": ["finance", "analyst", "executive", "sales"]
+    },
+    {
+      "id": "average_order_value",
+      "label": "Average order value",
+      "description": "Gross sales divided by orders.",
+      "formula": "gross ÷ orders",
+      "ratio": { "numerator": "gross", "denominator": "orders" },
+      "synonyms": ["average order value", "aov", "basket size"],
+      "owner": "Central Analytics",
+      "version": "1.2",
+      "certified": true,
+      "allowed_roles": ["finance", "analyst", "executive", "sales"]
+    },
+    {
+      "id": "contribution_margin",
+      "label": "Contribution margin",
+      "description": "Draft. Cost allocation rules are still being agreed with Finance.",
+      "formula": "not yet approved",
+      "synonyms": ["contribution margin", "margin"],
+      "owner": "Priya Nair · Finance Data",
+      "version": "0.3-draft",
+      "certified": false,
+      "allowed_roles": ["finance", "analyst", "executive"]
+    }
+  ],
+  "ambiguous_terms": {
+    "revenue": ["net_revenue_finance", "net_revenue_sales"],
+    "net revenue": ["net_revenue_finance", "net_revenue_sales"],
+    "sales": ["gross_sales", "net_revenue_sales"]
+  }
+}

@@ -1,0 +1,4877 @@
+{
+  "table": "sales_daily",
+  "results": [
+    {
+      "date": "2026-09-01",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-01",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-02",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-03",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-04",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-05",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-06",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-07",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-08",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-09",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-10",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-11",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-12",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-13",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-14",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-15",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-16",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-17",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-18",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-19",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-20",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-21",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-22",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-23T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-23",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-24T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-24",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-25T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-25",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-26T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-26",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-27T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-27",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-28T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-28",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-29T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-29",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-09-30T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-09-30",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-01T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-01",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-02T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-02",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-03T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-03",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-04T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-04",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-05T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-05",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-06T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-06",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-07T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-07",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-08T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-08",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-09T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-09",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-10T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-10",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-11T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-11",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-12T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-12",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-13T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-13",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-14T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-14",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "fail",
+      "detail": "Returns are 2× the 28-day average; possible duplicate return events.",
+      "checked_at": "2026-10-15T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-15",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-16T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-16",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-17T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-17",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-18T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-18",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-19T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-19",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-20T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-20",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-21T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "North",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "North",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "North",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "South",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "South",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "South",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "East",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "East",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "East",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "West",
+      "check": "row_count",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "West",
+      "check": "non_negative_amounts",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    },
+    {
+      "date": "2026-10-21",
+      "region": "West",
+      "check": "returns_reconciliation",
+      "status": "pass",
+      "detail": "",
+      "checked_at": "2026-10-22T05:30:00+05:30"
+    }
+  ]
+}

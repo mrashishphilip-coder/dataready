@@ -1,0 +1,382 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>DataReady Case Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~66ch) for the argument; the evidence (replay, results) breaks out wider, like exhibits in an audit file. */
+:root {
+  --paper: #f1f4f6; --surface: #ffffff; --ink: #13212b; --muted: #586874; --line: #d6dee4; --soft: #e7ecf0;
+  --accent: #2d3fb8; --accent-soft: #e6e9fb;
+  --ready: #1b7448; --ready-soft: #e2f2e9; --clarify: #8f5a00; --clarify-soft: #faefd8; --blocked: #ac3326; --blocked-soft: #f8e5e1;
+  --mark: #fbe9b7;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1418; --surface: #151d23; --ink: #e5ecf1; --muted: #93a3af; --line: #26323b; --soft: #1c262d;
+    --accent: #9ea8ff; --accent-soft: #232a52;
+    --ready: #6fd29e; --ready-soft: #16301f; --clarify: #f0c062; --clarify-soft: #3a2d12; --blocked: #f39483; --blocked-soft: #3c1c17;
+    --mark: #4a3d12; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1418; --surface: #151d23; --ink: #e5ecf1; --muted: #93a3af; --line: #26323b; --soft: #1c262d;
+  --accent: #9ea8ff; --accent-soft: #232a52;
+  --ready: #6fd29e; --ready-soft: #16301f; --clarify: #f0c062; --clarify-soft: #3a2d12; --blocked: #f39483; --blocked-soft: #3c1c17;
+  --mark: #4a3d12; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+.page { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 48px 72px; }
+.col { max-width: 700px; margin-left: auto; margin-right: auto; }
+.wide { max-width: 1060px; margin-left: auto; margin-right: auto; }
+.wide + section, .wide + .col { margin-top: 56px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(44px, 8vw, 76px); font-weight: 700; letter-spacing: -2px; line-height: 1; }
+h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.6px; line-height: 1.15; margin-bottom: 14px; }
+h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; margin-bottom: 6px; }
+p { margin: 0 0 14px; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.label { font-family: var(--mono); font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+section { margin-top: 72px; }
+.lede { font-size: clamp(21px, 3vw, 26px); line-height: 1.4; margin: 22px 0 0; max-width: 640px; }
+.byline { margin-top: 18px; color: var(--muted); font-size: 15px; }
+
+/* Result ledger under the hero */
+.ledger { margin-top: 36px; border-top: 2px solid var(--ink); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ledger div { padding: 16px 18px 6px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.ledger b { display: block; font-family: var(--display); font-size: 40px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ledger span { color: var(--muted); font-size: 15px; display: block; }
+@media (max-width: 640px) { .ledger { grid-template-columns: 1fr; } }
+
+/* Flow diagram */
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 22px 0 8px; }
+.flow > div { padding: 14px 14px 14px 0; border-top: 2px solid var(--line); position: relative; min-width: 0; }
+.flow > div.model { border-top-color: var(--accent); }
+.flow > div.code { border-top-color: var(--ink); }
+.flow b { display: block; font-size: 15px; }
+.flow span { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; }
+@media (max-width: 720px) { .flow { grid-template-columns: 1fr 1fr; } }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 18px; height: 2px; vertical-align: middle; margin-right: 6px; }
+
+/* Checks ledger */
+.checks { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 15px; }
+.checks td { padding: 9px 10px 9px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.checks td:first-child { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; width: 1%; }
+.checks td:nth-child(2) { font-weight: 600; white-space: nowrap; width: 1%; padding-right: 18px; }
+@media (max-width: 560px) { .checks td:nth-child(2) { white-space: normal; } }
+
+/* Options table */
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table.grid { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+table.grid th { text-align: left; font-family: var(--mono); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 12px 8px 0; border-bottom: 2px solid var(--ink); }
+table.grid td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.grid tr.chosen td { background: var(--accent-soft); }
+table.grid tr.chosen td:first-child { padding-left: 10px; }
+table.grid td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Replay exhibit */
+.exhibit { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 16px; }
+.tab { font: inherit; font-size: 14px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 7px 12px; border-radius: 999px; cursor: pointer; text-align: left; }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.ask { font-family: var(--display); font-size: 22px; font-weight: 500; letter-spacing: -0.3px; }
+.ask-meta { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+.lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+@media (max-width: 760px) { .lanes { grid-template-columns: 1fr; } }
+.lane { border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; background: var(--paper); }
+.lane h3 { font-size: 16px; margin: 0; }
+.lane .sub { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.badge { display: inline-block; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.8px; padding: 3px 8px; border-radius: 5px; }
+.b-answer { background: var(--ready-soft); color: var(--ready); }
+.b-clarify { background: var(--clarify-soft); color: var(--clarify); }
+.b-decline { background: var(--blocked-soft); color: var(--blocked); }
+.verdict { font-size: 13px; font-weight: 600; margin-left: 8px; }
+.v-good { color: var(--ready); } .v-bad { color: var(--blocked); } .v-meh { color: var(--clarify); }
+.says { margin: 10px 0 12px; font-size: 15px; overflow-wrap: anywhere; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding: 8px 0 8px 28px; border-top: 1px solid var(--line); font-size: 14px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 9px; width: 18px; height: 18px; border-radius: 50%; background: var(--soft); color: var(--muted); font: 500 11px/18px var(--mono); text-align: center; }
+.steps code { font-family: var(--mono); font-size: 12.5px; background: var(--soft); padding: 1px 5px; border-radius: 4px; }
+.steps .detail { display: block; color: var(--muted); overflow-wrap: anywhere; }
+.cost { margin-top: 8px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+mark { background: var(--mark); color: inherit; padding: 0 2px; border-radius: 2px; }
+.across { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.expected { margin-top: 12px; font-size: 15px; padding: 10px 12px; border-left: 3px solid var(--ink); background: var(--soft); }
+
+/* Results */
+.res td.arm { font-weight: 600; }
+.res td.arm small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
+.res .hl { color: var(--blocked); font-weight: 600; }
+.res .ok { color: var(--ready); font-weight: 600; }
+.note { font-size: 14px; color: var(--muted); margin-top: 10px; }
+
+/* Findings and mistakes */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+@media (max-width: 720px) { .pair { grid-template-columns: 1fr; } }
+.pair > div { border-top: 2px solid var(--ink); padding-top: 12px; min-width: 0; }
+.pair p { font-size: 16px; }
+.quote { font-family: var(--display); font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.15; margin: 8px 0 0; text-wrap: balance; }
+ol.plain, ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ol.plain li, ul.plain li { margin-bottom: 8px; }
+footer { margin-top: 80px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer p { margin-bottom: 8px; }
+</style>
+
+<div class="page">
+  <header class="col">
+    <p class="label">Product case study · October 2026</p>
+    <h1>DataReady</h1>
+    <p class="lede">AI agents rarely fail for lack of data. They fail because nothing checks whether a metric is fit for <em>this</em> question, <em>right now</em>. I built the check, then tested whether a careful agent even needs it.</p>
+    <p class="byline">Ashish Philip · Product leader, enterprise AI and data products · <a href="https://www.linkedin.com/in/ashishphilip1992/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+    <div class="ledger" id="ledger"></div>
+  </header>
+
+  <section class="col" aria-labelledby="problem">
+    <p class="label">The problem</p>
+    <h2 id="problem">"What was online GMV last week?" has a dozen ways to be wrong</h2>
+    <p>Ask an internal analytics agent a metric question and it will find a definition, query the warehouse and return a number. The number can be wrong in ways nobody sees: "revenue" meant the Sales definition, not Finance's; one region's rows never landed; yesterday's store load is still running; a quality check failed upstream; the person asking isn't allowed to see the figure.</p>
+    <p>An analyst carries this context in their head. An agent doesn't, and it answers confidently, at scale, with no one checking. The tools to catch each problem exist (semantic layers, data observability, catalogues), but they sit in different places and nothing combines them for one specific request at the moment of answering.</p>
+  </section>
+
+  <section class="col" aria-labelledby="options">
+    <p class="label">Options considered</p>
+    <h2 id="options">Before building, I asked what a company could do today</h2>
+  </section>
+  <div class="wide">
+    <div class="table-wrap">
+      <table class="grid">
+        <thead><tr><th>Option</th><th>Catches</th><th>Misses</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td><b>Semantic layer only</b></td><td>Definitions, access rules</td><td>Gaps, partial loads, failed checks, ambiguous wording</td><td>Necessary, not sufficient</td></tr>
+          <tr><td><b>Certified flags in the catalogue</b></td><td>Draft or deprecated metrics</td><td>Anything specific to the request: dates, regions, today's loads</td><td>Too coarse</td></tr>
+          <tr><td><b>Careful prompt + observability tool</b></td><td>Most issues, when the agent looks and weighs them correctly</td><td>A warning the model sees but treats as a footnote</td><td>Cheapest option, so I tested it as the baseline</td></tr>
+          <tr class="chosen"><td><b>Pre-flight readiness check</b></td><td>Request-specific fitness, enforced in code, with the reason</td><td>Can only judge the request it's given (see what I got wrong)</td><td>Built and tested against the baseline</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="col" aria-labelledby="bet">
+    <p class="label">The bet</p>
+    <h2 id="bet">Interpretation belongs to the model. The decision belongs to code.</h2>
+    <p>A model is good at turning "online GMV for the last 7 days" into a structured request. It is not a reliable judge of whether 27 of 28 expected rows is acceptable. So the model interprets, deterministic checks decide, and the person asking resolves ambiguity.</p>
+    <p><b>What would prove me wrong:</b> a careful agent with the same model, catalogue and tools matching the gate; or the gate blocking questions that had a clean answer. A gate that over-blocks gets switched off.</p>
+    <div class="flow" role="list" aria-label="How DataReady works">
+      <div role="listitem"><b>Question</b><span>"Online GMV for the last 7 days" · asked as analyst</span></div>
+      <div role="listitem" class="model"><b>Model interprets</b><span>Metric, period, regions, channels. Lists every metric the words could mean.</span></div>
+      <div role="listitem" class="code"><b>Code checks</b><span>Eight checks, scoped to this request's dates, regions and channels.</span></div>
+      <div role="listitem" class="code"><b>One decision</b><span>READY with the value and evidence, CLARIFY with options, or BLOCKED with reasons.</span></div>
+    </div>
+    <p class="legend"><span><i style="background:var(--accent)"></i>AI model</span><span><i style="background:var(--ink)"></i>Deterministic code</span></p>
+    <table class="checks" aria-label="The eight readiness checks">
+      <tbody>
+        <tr><td>1</td><td>Meaning</td><td>Exactly one metric definition. "Revenue" could be Finance or Sales, so the person chooses.</td></tr>
+        <tr><td>2</td><td>Certified</td><td>No draft definitions, such as contribution margin while cost rules are still being agreed.</td></tr>
+        <tr><td>3</td><td>Access</td><td>Checked before any data is read, so a blocked role learns nothing.</td></tr>
+        <tr><td>4</td><td>Period</td><td>A clear date range, or the person is asked.</td></tr>
+        <tr><td>5</td><td>Complete</td><td>No days in progress, no pending loads in scope.</td></tr>
+        <tr><td>6</td><td>Coverage</td><td>Every date × region × channel in scope has rows, even when the load says complete.</td></tr>
+        <tr><td>7</td><td>Quality</td><td>Upstream checks passed, for the columns this metric actually uses.</td></tr>
+        <tr><td>8</td><td>Freshness</td><td>The table was refreshed within its SLA.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="col" aria-labelledby="exp">
+    <p class="label">The experiment</p>
+    <h2 id="exp">Same model, same tools. One difference.</h2>
+    <p>I wrote 41 questions against fictional retail data with seven planted problems, and labeled the right response to each: answer, ask, or decline. Two agents ran on OpenAI's gpt-5.5 with the same metric catalogue, synonyms and calendar conventions. The baseline had a query tool, a data-observability tool and a prompt telling it to decline unreliable answers. The gated agent's only data tool was DataReady. Each ran all 41 questions three times.</p>
+  </section>
+
+  <div class="wide" style="margin-top:24px">
+    <div class="exhibit" aria-labelledby="replay-h">
+      <p class="label" id="replay-h">Recorded runs · choose a question</p>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div id="replay"></div>
+    </div>
+  </div>
+
+  <section class="col" aria-labelledby="results">
+    <p class="label">Results</p>
+    <h2 id="results">Zero false approvals with the gate. One, every run, without it.</h2>
+  </section>
+  <div class="wide">
+    <div class="table-wrap">
+      <table class="grid res" id="results-table"></table>
+    </div>
+    <p class="note col" style="margin-left:auto;margin-right:auto">Mean of three runs per AI arm (lowest–highest in brackets). The rules arm is deterministic, so one run. Tokens per question; the gated agent's figure includes DataReady's own interpretation call.</p>
+  </div>
+
+  <section class="col" aria-labelledby="found">
+    <p class="label">What I found</p>
+    <h2 id="found">The careful agent saw the warning and answered anyway</h2>
+    <p>On "Online GMV for the last 7 days", the baseline called the data-health tool, which reported a missing South quality check for 19 October. Its query scanned 27 rows where 28 were expected. In one run it even wrote the problem into its answer. Then it reported ₹44,75,299, about 3.3% short, in all three runs. A gap like that survives a meeting.</p>
+    <p class="quote">A prompt is advice. A gate is policy.</p>
+    <div class="pair">
+      <div>
+        <h3>Safer and cheaper</h3>
+        <p>The gated agent made one tool call instead of two or three, used about 23% fewer input tokens, and gave the same answer every run. The safe path became the cheap one.</p>
+      </div>
+      <div>
+        <h3>The baseline was good</h3>
+        <p>39–40 of 41 is a strong result. The problem is narrower than "agents are reckless": a well-instrumented signal gets seen and ignored, and the miss repeats.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="col" aria-labelledby="wrong">
+    <p class="label">What I got wrong</p>
+    <h2 id="wrong">The baseline caught a flaw in my own product</h2>
+    <div class="pair">
+      <div>
+        <h3>The gate was over-blocking</h3>
+        <p>In the first run, the baseline answered two questions DataReady had blocked: store orders and average order value for a week when West's <em>returns</em> check failed. Its reasoning: neither metric uses returns. It was right. I made the quality check column-aware, relabeled both questions, and re-ran everything. Version 1 results are kept, not deleted.</p>
+      </div>
+      <div>
+        <h3>A gate only judges the request it's given</h3>
+        <p>With keyword rules instead of a model, DataReady scored 37 of 41 with no false approvals but four wrong numbers. Each was a date range read as a single day. The data for that day was clean, so every check passed on the wrong scope. The model interpreter fixed all four, and every answer now shows what was understood.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px">I also made the baseline fairer after run 1. It hadn't been given the metric synonyms or calendar conventions the interpreter had, and it scored 34 of 41 with that handicap. Every number on this page is from the fair version.</p>
+  </section>
+
+  <section class="col" aria-labelledby="next">
+    <p class="label">What I'd do next</p>
+    <h2 id="next">Ship it as a feature, then test it with real metric owners</h2>
+    <ol class="plain">
+      <li><b>Build it into the semantic layer or catalogue</b>, where definitions, quality results and access rules already live. A standalone product would duplicate them.</li>
+      <li><b>Replay 20 real questions</b> from an analytics team's channel, labeled by the metric owners, and measure false approvals, unnecessary blocks and whether people trust the "what was understood" panel.</li>
+      <li><b>Track one number in production:</b> answers later corrected by a human. If the gate doesn't move it, it isn't earning its place.</li>
+    </ol>
+    <p><b>Limits:</b> synthetic data, 41 questions, one model, my own labels. Enough to show the pattern, not to estimate a production error rate. Independent labelers come next.</p>
+  </section>
+
+  <footer class="col">
+    <p>Built by Ashish Philip with AI coding assistance. Node.js with no frameworks; gpt-5.5 for interpretation and agents. Data is fictional ("Acme Retail"); the demo clock is fixed at Thursday 22 October 2026, 10:00 IST.</p>
+    <p>Every number and tool call on this page comes from the recorded evaluation results (question set <span class="mono" id="ver"></span>).</p>
+  </footer>
+</div>
+
+<script>
+const DATA = {"replays":[{"id":"B10","question":"Online GMV for the last 7 days","role":"analyst","expected":"decline","tests":"South gap on 19 Oct affects online too","baseline":{"verdict":"false_approval","outcome":"answer","metric_id":"gross_sales","value":4475299,"message":"Online GMV (certified Gross sales) for the last 7 full days (2026-10-15 to 2026-10-21) was 4,475,299. Data was refreshed at 2026-10-22 06:10 IST; online loads were complete and no quality checks failed, though the South region check for 2026-10-19 was missing.","seconds":10.5,"tokens":{"input_tokens":3551,"output_tokens":564},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}},{"tool":"get_data_health","input":{"start_date":"2026-10-15","end_date":"2026-10-21"},"output":{"failed":0,"pending":1,"missing":1}},{"tool":"query_metric","input":{"metric_id":"gross_sales","start_date":"2026-10-15","end_date":"2026-10-21","regions":[],"channels":["online"]},"output":{"value":4475299,"rows_scanned":27}}]},"gated":{"verdict":"correct","outcome":"decline","metric_id":null,"value":null,"message":"I can’t report Online GMV for the last 7 days reliably. The data check found a blocker: no rows for South online on 2026-10-19, even though the loads are marked complete. I won’t estimate a number from incomplete data.","seconds":6.6,"tokens":{"input_tokens":1188,"output_tokens":137},"steps":[{"tool":"check_readiness","input":{"question":"Online GMV for the last 7 days","metric_id":null},"output":{"decision":"BLOCKED","headline":"Gross sales can't be reported reliably for this request.","blockers":["No rows for South online on 2026-10-19, although the loads are marked complete."],"options":[]}}]},"across":{"baseline":{"runs":3,"correct":0},"gated":{"runs":3,"correct":3}}},{"id":"B08","question":"Gross sales for South on October 19","role":"analyst","expected":"decline","tests":"silent gap: load marked complete, no rows","baseline":{"verdict":"correct","outcome":"decline","metric_id":null,"value":null,"message":"I can’t provide a reliable gross sales figure for South on 2026-10-19 because the data quality check run for South on that date is missing. The table load is complete, but without that regional quality check, the result isn’t reliable enough to report.","seconds":7.5,"tokens":{"input_tokens":3126,"output_tokens":357},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}},{"tool":"query_metric","input":{"metric_id":"gross_sales","start_date":"2026-10-19","end_date":"2026-10-19","regions":["South"],"channels":[]},"output":{"value":0,"rows_scanned":0}},{"tool":"get_data_health","input":{"start_date":"2026-10-19","end_date":"2026-10-19"},"output":{"failed":0,"pending":0,"missing":1}}]},"gated":{"verdict":"correct","outcome":"decline","metric_id":null,"value":null,"message":"Gross sales can’t be reported reliably for South on 2026-10-19. The data load is marked complete, but there are no rows for South online or South store for that date, so I can’t estimate a number.","seconds":5.3,"tokens":{"input_tokens":1173,"output_tokens":111},"steps":[{"tool":"check_readiness","input":{"question":"Gross sales for South on October 19","metric_id":null},"output":{"decision":"BLOCKED","headline":"Gross sales can't be reported reliably for this request.","blockers":["No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."],"options":[]}}]},"across":{"baseline":{"runs":3,"correct":3},"gated":{"runs":3,"correct":3}}},{"id":"C01","question":"What was revenue last month?","role":"analyst","expected":"clarify","tests":"revenue: Finance or Sales","baseline":{"verdict":"correct","outcome":"clarify","metric_id":null,"value":null,"message":"“Revenue” is ambiguous. Do you want Net revenue (Finance) — revenue after returns and tax, used for financial reporting — or Net revenue (Sales) — revenue after returns before tax, used for sales targets? Last month is 2026-09-01 to 2026-09-30.","seconds":4.7,"tokens":{"input_tokens":1719,"output_tokens":207},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}}]},"gated":{"verdict":"correct","outcome":"clarify","metric_id":null,"value":null,"message":"Which revenue definition should I use for last month (2026-09-01 to 2026-09-30)?\n\n1. **Net revenue (Finance)** (`net_revenue_finance`) — revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`) — revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns","seconds":7,"tokens":{"input_tokens":1202,"output_tokens":159},"steps":[{"tool":"check_readiness","input":{"question":"What was revenue last month?","metric_id":null},"output":{"decision":"CLARIFY","headline":"This could mean Net revenue (Finance) or Net revenue (Sales). Which one?","blockers":[],"options":["Net revenue (Finance)","Net revenue (Sales)"]}}]},"across":{"baseline":{"runs":3,"correct":3},"gated":{"runs":3,"correct":3}}},{"id":"A19","question":"What was AOV for West last week?","role":"analyst","expected":"answer","tests":"West returns check failed, but AOV is gross ÷ orders (was B11 in v1)","baseline":{"verdict":"correct","outcome":"answer","metric_id":"average_order_value","value":2099.44,"message":"West AOV last week (2026-10-12 to 2026-10-18) was 2,099.44 across all channels. Loads were complete; note there was a West returns-reconciliation quality warning on 2026-10-14, but AOV is gross sales divided by orders.","seconds":12.8,"tokens":{"input_tokens":3143,"output_tokens":786},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}},{"tool":"query_metric","input":{"metric_id":"average_order_value","start_date":"2026-10-12","end_date":"2026-10-18","regions":["West"],"channels":[]},"output":{"value":2099.44,"rows_scanned":14}},{"tool":"get_data_health","input":{"start_date":"2026-10-12","end_date":"2026-10-18"},"output":{"failed":1,"pending":0,"missing":0}}]},"gated":{"verdict":"correct","outcome":"answer","metric_id":"average_order_value","value":2099.44,"message":"AOV for West last week (2026-10-12 to 2026-10-18) was ₹2,099.44.\n\nDefinition used: Average order value = gross ÷ orders (v1.2), owned by Central Analytics.","seconds":5.2,"tokens":{"input_tokens":1219,"output_tokens":122},"steps":[{"tool":"check_readiness","input":{"question":"What was AOV for West last week?","metric_id":null},"output":{"decision":"READY","headline":"Average order value: ₹2,099","blockers":[],"options":[]}}]},"across":{"baseline":{"runs":3,"correct":3},"gated":{"runs":3,"correct":3}}},{"id":"A04","question":"What was Sales net revenue for the online channel yesterday?","role":"sales","expected":"answer","tests":"pending store load is out of scope","baseline":{"verdict":"correct","outcome":"answer","metric_id":"net_revenue_sales","value":636128,"message":"Sales net revenue for the online channel yesterday (2026-10-21) was 636,128.","seconds":6.7,"tokens":{"input_tokens":3294,"output_tokens":287},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}},{"tool":"get_data_health","input":{"start_date":"2026-10-21","end_date":"2026-10-21"},"output":{"failed":0,"pending":1,"missing":0}},{"tool":"query_metric","input":{"metric_id":"net_revenue_sales","start_date":"2026-10-21","end_date":"2026-10-21","regions":[],"channels":["online"]},"output":{"value":636128,"rows_scanned":4}}]},"gated":{"verdict":"correct","outcome":"answer","metric_id":"net_revenue_sales","value":636128,"message":"Sales net revenue for the online channel yesterday (2026-10-21) was ₹6,36,128.\n\nDefinition used: Net revenue (Sales) = gross − returns (v1.4).","seconds":6.8,"tokens":{"input_tokens":1241,"output_tokens":113},"steps":[{"tool":"check_readiness","input":{"question":"What was Sales net revenue for the online channel yesterday?","metric_id":null},"output":{"decision":"READY","headline":"Net revenue (Sales): ₹6,36,128","blockers":[],"options":[]}}]},"across":{"baseline":{"runs":3,"correct":3},"gated":{"runs":3,"correct":3}}},{"id":"B06","question":"What was finance net revenue in September?","role":"sales","expected":"decline","tests":"role cannot see finance net revenue","baseline":{"verdict":"correct","outcome":"decline","metric_id":null,"value":null,"message":"I can’t report Finance net revenue for September because your sales role doesn’t have access to the certified Finance net revenue metric. The September data health checks are complete and passing, but I don’t have permission to query that metric.","seconds":7.3,"tokens":{"input_tokens":2983,"output_tokens":310},"steps":[{"tool":"list_metrics","input":{},"output":{"metrics":6}},{"tool":"query_metric","input":{"metric_id":"net_revenue_finance","start_date":"2026-09-01","end_date":"2026-09-30","regions":[],"channels":[]},"output":{"error":"Access denied: role sales cannot query net_revenue_finance"}},{"tool":"get_data_health","input":{"start_date":"2026-09-01","end_date":"2026-09-30"},"output":{"failed":0,"pending":0,"missing":0}}]},"gated":{"verdict":"correct","outcome":"decline","metric_id":null,"value":null,"message":"I can’t report that number because your sales role doesn’t have access to Net revenue (Finance).\n\nMetric requested: Net revenue (Finance) = gross − returns − tax, owned by Priya Nair · Finance Data. Period: 2026-09-01 to 2026-09-30.","seconds":5.9,"tokens":{"input_tokens":1169,"output_tokens":143},"steps":[{"tool":"check_readiness","input":{"question":"What was finance net revenue in September?","metric_id":null},"output":{"decision":"BLOCKED","headline":"You don't have access to Net revenue (Finance).","blockers":[],"options":[]}}]},"across":{"baseline":{"runs":3,"correct":3},"gated":{"runs":3,"correct":3}}}],"summary":{"version":"v2","questions":41,"model":"openai · gpt-5.5","arms":[{"arm":"gated","runs":3,"correct":{"mean":41,"min":41,"max":41},"false_approval":{"mean":0,"min":0,"max":0},"wrong_number":{"mean":0,"min":0,"max":0},"unnecessary_block":{"mean":0,"min":0,"max":0},"safe_mismatch":{"mean":0,"min":0,"max":0},"tokens_in":1210,"tokens_out":134},{"arm":"llm","runs":3,"correct":{"mean":41,"min":41,"max":41},"false_approval":{"mean":0,"min":0,"max":0},"wrong_number":{"mean":0,"min":0,"max":0},"unnecessary_block":{"mean":0,"min":0,"max":0},"safe_mismatch":{"mean":0,"min":0,"max":0},"tokens_in":791,"tokens_out":77},{"arm":"baseline","runs":3,"correct":{"mean":39.666666666666664,"min":39,"max":40},"false_approval":{"mean":1,"min":1,"max":1},"wrong_number":{"mean":0,"min":0,"max":0},"unnecessary_block":{"mean":0,"min":0,"max":0},"safe_mismatch":{"mean":0.3333333333333333,"min":0,"max":1},"tokens_in":2607,"tokens_out":290},{"arm":"rules","runs":1,"correct":{"mean":37,"min":37,"max":37},"false_approval":{"mean":0,"min":0,"max":0},"wrong_number":{"mean":4,"min":4,"max":4},"unnecessary_block":{"mean":0,"min":0,"max":0},"safe_mismatch":{"mean":0,"min":0,"max":0},"tokens_in":0,"tokens_out":0}]}};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const inr = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
+const num = (n) => Number(n).toLocaleString("en-IN");
+const ARM = {
+  gated: ["Agent + DataReady", "Its only data tool is the readiness check"],
+  llm: ["DataReady alone, model interpreter", "No agent; the check answers directly"],
+  baseline: ["Agent without the gate", "Query tool, data-health tool, careful prompt"],
+  rules: ["DataReady alone, keyword rules", "No model at all"],
+};
+const OUT = { answer: ["ANSWERED", "b-answer"], clarify: ["ASKED", "b-clarify"], decline: ["DECLINED", "b-decline"] };
+const EXPECT = { answer: "answer with a number", clarify: "ask the person to clarify", decline: "decline" };
+
+function stat(s, digits = 0) {
+  const m = Number.isInteger(s.mean) ? String(s.mean) : s.mean.toFixed(1);
+  return s.min === s.max ? m : `${m} <small>(${s.min}–${s.max})</small>`;
+}
+
+const arm = (id) => DATA.summary.arms.find((a) => a.arm === id);
+// The gated agent's tokens plus DataReady's own interpretation call, measured on the "llm" arm.
+const gatedTokens = () => ({ in: arm("gated").tokens_in + arm("llm").tokens_in, out: arm("gated").tokens_out + arm("llm").tokens_out });
+
+function renderLedger() {
+  const g = arm("gated");
+  const b = arm("baseline");
+  const saving = Math.round((1 - gatedTokens().in / b.tokens_in) * 100);
+  $("ledger").innerHTML = `
+    <div><b>0</b><span>false approvals with the gate, ${DATA.summary.questions} questions × ${g.runs} runs</span></div>
+    <div><b>${b.false_approval.mean} of ${DATA.summary.questions}</b><span>false approval without it, on the same question every run</span></div>
+    <div><b>${saving}%</b><span>fewer input tokens per question with the gate</span></div>`;
+}
+
+function renderResults() {
+  const rows = DATA.summary.arms.map((a) => {
+    const [name, sub] = ARM[a.arm];
+    const t = a.arm === "gated" ? gatedTokens() : { in: a.tokens_in, out: a.tokens_out };
+    const tokens = a.arm === "rules" ? "–" : `${num(t.in)} / ${num(t.out)}`;
+    const fa = a.false_approval.mean > 0 ? `<span class="hl">${stat(a.false_approval)}</span>` : `<span class="ok">0</span>`;
+    return `<tr><td class="arm">${name}<small>${sub}</small></td><td class="num">${stat(a.correct)} / ${DATA.summary.questions}</td><td class="num">${fa}</td><td class="num">${stat(a.wrong_number)}</td><td class="num">${stat(a.unnecessary_block)}</td><td class="num">${a.runs}</td><td class="num">${tokens}</td></tr>`;
+  }).join("");
+  $("results-table").innerHTML = `<thead><tr><th>Setup</th><th>Correct</th><th>Gave a number it shouldn't</th><th>Wrong number</th><th>Refused a clean answer</th><th>Runs</th><th>Tokens in / out</th></tr></thead><tbody>${rows}</tbody>`;
+  $("ver").textContent = DATA.summary.version;
+}
+
+const MARKS = [/\d+ missing check run\(s\)/g, /from \d+ rows/g, /[^.;,]*\bwas missing\b/gi];
+const highlight = (html) => MARKS.reduce((h, re) => h.replace(re, (m) => `<mark>${m}</mark>`), html);
+
+function step(s) {
+  const o = s.output, i = s.input;
+  if (o.error) return [`<code>${esc(s.tool)}</code>`, `Error: ${o.error}`];
+  switch (s.tool) {
+    case "list_metrics": return ["<code>list_metrics</code>", `${o.metrics} metrics in the catalogue`];
+    case "query_metric": {
+      const scope = [i.regions?.join(" + ") || "all regions", i.channels?.join(" + ") || "all channels"].join(", ");
+      return [`<code>query_metric</code> ${esc(i.metric_id)}`, `${i.start_date} → ${i.end_date}, ${scope} → ${num(o.value)} from ${o.rows_scanned} rows`];
+    }
+    case "get_data_health": return [`<code>get_data_health</code> ${esc(i.start_date)} → ${esc(i.end_date)}`, `${o.failed} failed check(s), ${o.pending} pending load(s), ${o.missing} missing check run(s)`];
+    case "check_readiness": {
+      const extra = o.blockers.length ? ` ${o.blockers.join(" ")}` : o.options.length ? ` Options: ${o.options.join(", ")}.` : "";
+      return [`<code>check_readiness</code>${i.metric_id ? ` (chose ${esc(i.metric_id)})` : ""}`, `${o.decision}: ${o.headline}${extra}`];
+    }
+    default: return [`<code>${esc(s.tool)}</code>`, ""];
+  }
+}
+
+const inr2 = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 2 });
+function formatValue(metricId, v) {
+  if (metricId === "order_count") return `${num(v)} orders`;
+  if (metricId === "average_order_value") return inr2.format(v);
+  return inr.format(v);
+}
+
+function verdict(expected, got) {
+  if (got === expected) return `<span class="verdict v-good">✓ right response</span>`;
+  if (got === "answer") return `<span class="verdict v-bad">✕ gave a number it shouldn't have</span>`;
+  if (expected === "answer") return `<span class="verdict v-meh">✕ refused a clean answer</span>`;
+  return `<span class="verdict v-meh">≈ safe, different kind of non-answer</span>`;
+}
+
+function lane(arm, r, d) {
+  const [o, cls] = OUT[d.outcome] ?? [d.outcome, ""];
+  const value = d.outcome === "answer" && d.value != null ? ` · ${formatValue(d.metric_id, d.value)}` : "";
+  const steps = d.steps.map(step).map(([w, det]) => `<li>${w}<span class="detail">${highlight(esc(det))}</span></li>`).join("");
+  const across = r.across[arm];
+  return `<div class="lane">
+    <h3>${arm === "gated" ? "With DataReady" : "Without DataReady"}</h3>
+    <p class="sub">${arm === "gated" ? "Only data tool: the readiness check" : "Query tool, data-health tool, careful prompt"}</p>
+    <div><span class="badge ${cls}">${o}${esc(value)}</span>${verdict(r.expected, d.outcome)}</div>
+    <p class="says">${highlight(esc(d.message))}</p>
+    <ol class="steps" aria-label="Tool calls">${steps}</ol>
+    <p class="cost">${d.seconds} s · ${num(d.tokens.input_tokens)} tokens in / ${num(d.tokens.output_tokens)} out · right in ${across.correct} of ${across.runs} runs</p>
+  </div>`;
+}
+
+function show(id) {
+  const r = DATA.replays.find((x) => x.id === id);
+  document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.id === id)));
+  $("replay").innerHTML = `
+    <p class="ask">“${esc(r.question)}”</p>
+    <p class="ask-meta">Asked as: ${esc(r.role)} · question ${esc(r.id)} · ${esc(r.tests)}</p>
+    <p class="expected">The labeled right response: <b>${EXPECT[r.expected]}</b>.</p>
+    <div class="lanes">${lane("baseline", r, r.baseline)}${lane("gated", r, r.gated)}</div>`;
+}
+
+const TAB_NAMES = { B10: "Online GMV, last 7 days", B08: "South on 19 October", C01: "Revenue last month", A19: "AOV for West, last week", A04: "Online net revenue, yesterday", B06: "Finance figure, sales role" };
+$("tabs").innerHTML = DATA.replays.map((r) => `<button class="tab" role="tab" data-id="${r.id}" aria-selected="false">${esc(TAB_NAMES[r.id] ?? r.id)}</button>`).join("");
+$("tabs").addEventListener("click", (e) => { const t = e.target.closest(".tab"); if (t) show(t.dataset.id); });
+renderLedger();
+renderResults();
+show(DATA.replays[0].id);
+</script>
+
+</body></html>

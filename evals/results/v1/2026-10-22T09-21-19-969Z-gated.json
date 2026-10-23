@@ -1,0 +1,251 @@
+{
+  "arm": "gated",
+  "model": "openai · gpt-5.5",
+  "run_at": "2026-10-22T09:21:35.008Z",
+  "summary": {
+    "total": 3,
+    "counts": {
+      "correct": 3,
+      "false_approval": 0,
+      "wrong_number": 0,
+      "unnecessary_block": 0,
+      "safe_mismatch": 0,
+      "error": 0
+    },
+    "byGroup": {
+      "answer": {
+        "total": 1,
+        "correct": 1
+      },
+      "clarify": {
+        "total": 1,
+        "correct": 1
+      },
+      "decline": {
+        "total": 1,
+        "correct": 1
+      }
+    },
+    "usage": {
+      "input_tokens": 2759,
+      "output_tokens": 389
+    }
+  },
+  "rows": [
+    {
+      "id": "A05",
+      "question": "What was our average order value in East from October 1 to October 7?",
+      "role": "analyst",
+      "tests": "ratio metric, explicit range",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-01",
+        "end": "2026-10-07",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2036.94,
+        "message": "Average order value in East from October 1 to October 7 was ₹2,037 (₹2,036.94), using the Central Analytics definition: gross ÷ orders (v1.2).",
+        "usage": {
+          "input_tokens": 975,
+          "output_tokens": 136
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was our average order value in East from October 1 to October 7?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "READY",
+                "headline": "Average order value: ₹2,037",
+                "value": 2036.94,
+                "value_formatted": "₹2,037",
+                "metric": {
+                  "id": "average_order_value",
+                  "label": "Average order value",
+                  "formula": "gross ÷ orders",
+                  "version": "1.2",
+                  "owner": "Central Analytics"
+                },
+                "evidence": {
+                  "rows_used": 14,
+                  "definition": "gross ÷ orders (v1.2)",
+                  "owner": "Central Analytics",
+                  "table_refreshed_at": "2026-10-22T06:10:00+05:30",
+                  "evidence_hash": "a42aee0f9bb4c533"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "average_order_value"
+                  ],
+                  "period": {
+                    "start": "2026-10-01",
+                    "end": "2026-10-07"
+                  },
+                  "regions": [
+                    "East"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 5218
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C01",
+      "question": "What was revenue last month?",
+      "role": "analyst",
+      "tests": "revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?\n\nOptions:\n1. **Net revenue (Finance)** (`net_revenue_finance`) — Revenue after returns and indirect tax; used in financial reporting. Formula: gross − returns − tax\n2. **Net revenue (Sales)** (`net_revenue_sales`) — Revenue after returns, before tax; used for sales targets and incentives. Formula: gross − returns",
+        "usage": {
+          "input_tokens": 914,
+          "output_tokens": 153
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "What was revenue last month?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "CLARIFY",
+                "headline": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+                "options": [
+                  {
+                    "id": "net_revenue_finance",
+                    "label": "Net revenue (Finance)",
+                    "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                    "formula": "gross − returns − tax"
+                  },
+                  {
+                    "id": "net_revenue_sales",
+                    "label": "Net revenue (Sales)",
+                    "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                    "formula": "gross − returns"
+                  }
+                ],
+                "scope": {
+                  "metric_candidates": [
+                    "net_revenue_finance",
+                    "net_revenue_sales"
+                  ],
+                  "period": {
+                    "start": "2026-09-01",
+                    "end": "2026-09-30"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6697
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B03",
+      "question": "How many orders did we get yesterday?",
+      "role": "analyst",
+      "tests": "store load pending for 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": null,
+        "value": null,
+        "message": "I can’t report orders reliably for yesterday (2026-10-21) yet. The store data load for that date is still pending, so the order count would be incomplete.",
+        "usage": {
+          "input_tokens": 870,
+          "output_tokens": 100
+        },
+        "turns": 2,
+        "detail": {
+          "trace": [
+            {
+              "tool": "check_readiness",
+              "input": {
+                "question": "How many orders did we get yesterday?",
+                "metric_id": null
+              },
+              "output": {
+                "decision": "BLOCKED",
+                "headline": "Orders can't be reported reliably for this request.",
+                "blockers": [
+                  "Partial data: the store load for 2026-10-21 is still pending."
+                ],
+                "metric": {
+                  "id": "order_count",
+                  "label": "Orders",
+                  "formula": "orders",
+                  "version": "1.0",
+                  "owner": "Central Analytics"
+                },
+                "scope": {
+                  "metric_candidates": [
+                    "order_count"
+                  ],
+                  "period": {
+                    "start": "2026-10-21",
+                    "end": "2026-10-21"
+                  },
+                  "regions": [
+                    "East",
+                    "North",
+                    "South",
+                    "West"
+                  ],
+                  "channels": [
+                    "online",
+                    "store"
+                  ],
+                  "role": "analyst"
+                }
+              }
+            }
+          ]
+        },
+        "ms": 6113
+      },
+      "verdict": "correct"
+    }
+  ]
+}

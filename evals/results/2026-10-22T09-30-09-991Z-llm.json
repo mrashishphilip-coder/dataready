@@ -1,0 +1,1982 @@
+{
+  "arm": "llm",
+  "eval_version": "v2",
+  "model": "openai · gpt-5.5",
+  "run_at": "2026-10-22T09:30:31.198Z",
+  "summary": {
+    "total": 41,
+    "counts": {
+      "correct": 41,
+      "false_approval": 0,
+      "wrong_number": 0,
+      "unnecessary_block": 0,
+      "safe_mismatch": 0,
+      "error": 0
+    },
+    "byGroup": {
+      "answer": {
+        "total": 19,
+        "correct": 19
+      },
+      "clarify": {
+        "total": 10,
+        "correct": 10
+      },
+      "decline": {
+        "total": 12,
+        "correct": 12
+      }
+    },
+    "usage": {
+      "input_tokens": 32433,
+      "output_tokens": 3088
+    }
+  },
+  "rows": [
+    {
+      "id": "A01",
+      "question": "What was finance net revenue in September?",
+      "role": "analyst",
+      "tests": "clean month, explicit definition",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 36304662,
+        "message": "Net revenue (Finance): ₹3,63,04,662",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1688,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 55
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "All regions and channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 55
+        },
+        "ms": 1702
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A02",
+      "question": "How many orders did we get last month?",
+      "role": "analyst",
+      "tests": "relative month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 22152,
+        "message": "Orders: 22,152 orders",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2341,
+            "usage": {
+              "input_tokens": 791,
+              "output_tokens": 62
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Interpreted last month as September 2026 and included all regions and channels."
+          }
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 62
+        },
+        "ms": 2343
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A03",
+      "question": "What was gross sales for the North region last week?",
+      "role": "analyst",
+      "tests": "West quality failure is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 2951314,
+        "message": "Gross sales: ₹29,51,314",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2176,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 75
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": "Last week is resolved as Monday 2026-10-12 through Sunday 2026-10-18; channels are all channels."
+          }
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 75
+        },
+        "ms": 2177
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A04",
+      "question": "What was Sales net revenue for the online channel yesterday?",
+      "role": "sales",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 636128,
+        "message": "Net revenue (Sales): ₹6,36,128",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2425,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 111
+            },
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": "Sales net revenue is interpreted as net_revenue_sales; regions are all regions."
+          }
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 111
+        },
+        "ms": 2425
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A05",
+      "question": "What was our average order value in East from October 1 to October 7?",
+      "role": "analyst",
+      "tests": "ratio metric, explicit range",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-01",
+        "end": "2026-10-07",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2036.94,
+        "message": "Average order value: ₹2,037",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1461,
+            "usage": {
+              "input_tokens": 799,
+              "output_tokens": 53
+            },
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-10-01",
+              "end": "2026-10-07"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": "All channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 53
+        },
+        "ms": 1462
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A06",
+      "question": "GMV on 5 October 2026",
+      "role": "analyst",
+      "tests": "synonym, single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-05"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 1406436,
+        "message": "Gross sales: ₹14,06,436",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1517,
+            "usage": {
+              "input_tokens": 791,
+              "output_tokens": 59
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-05",
+              "end": "2026-10-05"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "GMV maps to gross_sales; all regions and channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 59
+        },
+        "ms": 1518
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A07",
+      "question": "Finance net revenue for South last week",
+      "role": "finance",
+      "tests": "South gap is on the 19th, outside last week",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 2385139,
+        "message": "Net revenue (Finance): ₹23,85,139",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1598,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 60
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": "Interpreted last week as Monday to Sunday."
+          }
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 60
+        },
+        "ms": 1598
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A08",
+      "question": "How many online orders were there yesterday?",
+      "role": "analyst",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 274,
+        "message": "Orders: 274 orders",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2362,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 93
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": "Assumed all regions."
+          }
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 93
+        },
+        "ms": 2363
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A09",
+      "question": "Gross sales in the West region on October 13",
+      "role": "analyst",
+      "tests": "day next to the failed quality check",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-13",
+        "end": "2026-10-13",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 351220,
+        "message": "Gross sales: ₹3,51,220",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1764,
+            "usage": {
+              "input_tokens": 792,
+              "output_tokens": 56
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-13",
+              "end": "2026-10-13"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": "All channels assumed because no channel was specified."
+          }
+        },
+        "usage": {
+          "input_tokens": 792,
+          "output_tokens": 56
+        },
+        "ms": 1764
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A10",
+      "question": "What was the topline for East last month?",
+      "role": "executive",
+      "tests": "synonym",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-09-01",
+        "end": "2026-09-30",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 8243208,
+        "message": "Gross sales: ₹82,43,208",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2743,
+            "usage": {
+              "input_tokens": 792,
+              "output_tokens": 105
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": "Interpreted “topline” as gross sales and “last month” as September 2026."
+          }
+        },
+        "usage": {
+          "input_tokens": 792,
+          "output_tokens": 105
+        },
+        "ms": 2743
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A11",
+      "question": "Number of orders in North stores from Oct 15 to Oct 20",
+      "role": "analyst",
+      "tests": "region and channel scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-15",
+        "end": "2026-10-20",
+        "regions": [
+          "North"
+        ],
+        "channels": [
+          "store"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 782,
+        "message": "Orders: 782 orders",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1509,
+            "usage": {
+              "input_tokens": 796,
+              "output_tokens": 58
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-20"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [
+              "store"
+            ],
+            "notes": "Interpreted stores as the store channel."
+          }
+        },
+        "usage": {
+          "input_tokens": 796,
+          "output_tokens": 58
+        },
+        "ms": 1509
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A12",
+      "question": "What was the average order value across all regions in September?",
+      "role": "analyst",
+      "tests": "ratio metric over a month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2050.41,
+        "message": "Average order value: ₹2,050",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1553,
+            "usage": {
+              "input_tokens": 794,
+              "output_tokens": 54
+            },
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "All regions and all channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 54
+        },
+        "ms": 1553
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A13",
+      "question": "Finance net revenue for the West region on October 20",
+      "role": "finance",
+      "tests": "clean single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 307305,
+        "message": "Net revenue (Finance): ₹3,07,305",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1557,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 63
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-20",
+              "end": "2026-10-20"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": "Finance net revenue is unambiguous; all channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 63
+        },
+        "ms": 1558
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A14",
+      "question": "What did Sales net revenue look like for East and North between 12 and 18 October?",
+      "role": "sales",
+      "tests": "two regions, quality failure out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "East",
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 4573998,
+        "message": "Net revenue (Sales): ₹45,73,998",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1842,
+            "usage": {
+              "input_tokens": 801,
+              "output_tokens": 67
+            },
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "East",
+              "North"
+            ],
+            "channels": [],
+            "notes": "Interpreted Sales net revenue as net_revenue_sales; all channels included."
+          }
+        },
+        "usage": {
+          "input_tokens": 801,
+          "output_tokens": 67
+        },
+        "ms": 1842
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A15",
+      "question": "Give me finance net revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 535576,
+        "message": "Net revenue (Finance): ₹5,35,576",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2477,
+            "usage": {
+              "input_tokens": 792,
+              "output_tokens": 93
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": "Assumed all regions."
+          }
+        },
+        "usage": {
+          "input_tokens": 792,
+          "output_tokens": 93
+        },
+        "ms": 2478
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A16",
+      "question": "How many orders did South get on October 18?",
+      "role": "analyst",
+      "tests": "day before the South gap",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 240,
+        "message": "Orders: 240 orders",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2377,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 87
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-18",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": "Assumed October 18 refers to 2026; all channels included."
+          }
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 87
+        },
+        "ms": 2377
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A17",
+      "question": "What were gross sales for West in the week of 5 October?",
+      "role": "analyst",
+      "tests": "paraphrased period",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-11",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 2690895,
+        "message": "Gross sales: ₹26,90,895",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2999,
+            "usage": {
+              "input_tokens": 796,
+              "output_tokens": 142
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-05",
+              "end": "2026-10-11"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": "The week of 5 October is resolved as Monday 2026-10-05 through Sunday 2026-10-11."
+          }
+        },
+        "usage": {
+          "input_tokens": 796,
+          "output_tokens": 142
+        },
+        "ms": 3000
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A18",
+      "question": "Total store orders last week",
+      "role": "analyst",
+      "tests": "West returns check failed, but orders don't use returns (was B09 in v1)",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "channels": [
+          "store"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 3286,
+        "message": "Orders: 3,286 orders",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1824,
+            "usage": {
+              "input_tokens": 787,
+              "output_tokens": 62
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [],
+            "channels": [
+              "store"
+            ],
+            "notes": "“Total store orders” is interpreted as order count for the store channel."
+          }
+        },
+        "usage": {
+          "input_tokens": 787,
+          "output_tokens": 62
+        },
+        "ms": 1825
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A19",
+      "question": "What was AOV for West last week?",
+      "role": "analyst",
+      "tests": "West returns check failed, but AOV is gross ÷ orders (was B11 in v1)",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2099.44,
+        "message": "Average order value: ₹2,099",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2040,
+            "usage": {
+              "input_tokens": 791,
+              "output_tokens": 67
+            },
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": "AOV maps to average_order_value; channels were not specified, so all channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 67
+        },
+        "ms": 2040
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C01",
+      "question": "What was revenue last month?",
+      "role": "analyst",
+      "tests": "revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2816,
+            "usage": {
+              "input_tokens": 788,
+              "output_tokens": 108
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "“Revenue” is ambiguous between Finance net revenue and Sales net revenue; no region or channel was specified."
+          }
+        },
+        "usage": {
+          "input_tokens": 788,
+          "output_tokens": 108
+        },
+        "ms": 2816
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C02",
+      "question": "How much net revenue did North make last week?",
+      "role": "analyst",
+      "tests": "net revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1558,
+            "usage": {
+              "input_tokens": 792,
+              "output_tokens": 67
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": "“Net revenue” is ambiguous between Finance and Sales definitions."
+          }
+        },
+        "usage": {
+          "input_tokens": 792,
+          "output_tokens": 67
+        },
+        "ms": 1558
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C03",
+      "question": "What were our sales in September?",
+      "role": "analyst",
+      "tests": "sales: gross or net",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Gross sales or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1776,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 65
+            },
+            "metric_candidates": [
+              "gross_sales",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "“Sales” is ambiguous and could mean gross sales or Sales net revenue."
+          }
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 65
+        },
+        "ms": 1776
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C04",
+      "question": "Revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2124,
+            "usage": {
+              "input_tokens": 788,
+              "output_tokens": 112
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": "“Revenue” is ambiguous between Finance and Sales net revenue."
+          }
+        },
+        "usage": {
+          "input_tokens": 788,
+          "output_tokens": 112
+        },
+        "ms": 2124
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C05",
+      "question": "What was the West region's revenue on October 13?",
+      "role": "analyst",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1890,
+            "usage": {
+              "input_tokens": 794,
+              "output_tokens": 69
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-13",
+              "end": "2026-10-13"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": "“Revenue” is ambiguous between Finance net revenue and Sales net revenue."
+          }
+        },
+        "usage": {
+          "input_tokens": 794,
+          "output_tokens": 69
+        },
+        "ms": 1890
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C06",
+      "question": "How are we doing?",
+      "role": "executive",
+      "tests": "no metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "Which metric do you mean?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1532,
+            "usage": {
+              "input_tokens": 787,
+              "output_tokens": 39
+            },
+            "metric_candidates": [],
+            "period": null,
+            "regions": [],
+            "channels": [],
+            "notes": "No specific metric, time period, region, or channel was provided."
+          }
+        },
+        "usage": {
+          "input_tokens": 787,
+          "output_tokens": 39
+        },
+        "ms": 1532
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C07",
+      "question": "Gross sales for North",
+      "role": "analyst",
+      "tests": "no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "For which period do you want Gross sales?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1521,
+            "usage": {
+              "input_tokens": 786,
+              "output_tokens": 35
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": null,
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": "No period was specified."
+          }
+        },
+        "usage": {
+          "input_tokens": 786,
+          "output_tokens": 35
+        },
+        "ms": 1521
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C08",
+      "question": "Show me the net revenue trend",
+      "role": "analyst",
+      "tests": "ambiguous metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1757,
+            "usage": {
+              "input_tokens": 788,
+              "output_tokens": 58
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": null,
+            "regions": [],
+            "channels": [],
+            "notes": "“Net revenue” is ambiguous between Finance and Sales definitions, and no time period or trend grain was specified."
+          }
+        },
+        "usage": {
+          "input_tokens": 788,
+          "output_tokens": 58
+        },
+        "ms": 1757
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C09",
+      "question": "What was revenue in Q3?",
+      "role": "finance",
+      "tests": "ambiguous metric",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 3106,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 172
+            },
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-07-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Revenue is ambiguous between Finance and Sales net revenue, and Q3 starts before available data on 2026-09-01."
+          }
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 172
+        },
+        "ms": 3106
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C10",
+      "question": "How much did we sell in the East in September?",
+      "role": "sales",
+      "tests": "sell: gross or net sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Gross sales or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2796,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 130
+            },
+            "metric_candidates": [
+              "gross_sales",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": "“Sell” is treated as ambiguous sales wording, so it could mean gross sales or sales net revenue."
+          }
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 130
+        },
+        "ms": 2796
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B01",
+      "question": "What was finance net revenue last week?",
+      "role": "analyst",
+      "tests": "West returns quality check failed on 14 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "Net revenue (Finance) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1673,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 55
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "All regions and channels are assumed."
+          },
+          "blockers": [
+            "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+          ]
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 55
+        },
+        "ms": 1673
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B02",
+      "question": "Gross sales across all regions in the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct and pending store load on 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1765,
+            "usage": {
+              "input_tokens": 793,
+              "output_tokens": 66
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "All regions and all channels are included; last 7 days means the 7 full days ending yesterday."
+          },
+          "blockers": [
+            "Partial data: the store load for 2026-10-21 is still pending.",
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 66
+        },
+        "ms": 1766
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B03",
+      "question": "How many orders did we get yesterday?",
+      "role": "analyst",
+      "tests": "store load pending for 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "order_count",
+        "value": null,
+        "message": "Orders can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1753,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 52
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Assumed all regions and channels."
+          },
+          "blockers": [
+            "Partial data: the store load for 2026-10-21 is still pending."
+          ]
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 52
+        },
+        "ms": 1753
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B04",
+      "question": "What were gross sales today?",
+      "role": "executive",
+      "tests": "day in progress",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1792,
+            "usage": {
+              "input_tokens": 788,
+              "output_tokens": 52
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-22",
+              "end": "2026-10-22"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Assumed all regions and channels."
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+          ]
+        },
+        "usage": {
+          "input_tokens": 788,
+          "output_tokens": 52
+        },
+        "ms": 1792
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B05",
+      "question": "What's our contribution margin for September?",
+      "role": "finance",
+      "tests": "draft metric",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "contribution_margin",
+        "value": null,
+        "message": "Contribution margin has no approved definition yet.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1736,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 60
+            },
+            "metric_candidates": [
+              "contribution_margin"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Contribution margin is a draft metric with cost allocation rules not yet approved."
+          }
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 60
+        },
+        "ms": 1736
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B06",
+      "question": "What was finance net revenue in September?",
+      "role": "sales",
+      "tests": "role cannot see finance net revenue",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "You don't have access to Net revenue (Finance).",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1884,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 64
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "Interpreted September as September 2026; all regions and channels included."
+          }
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 64
+        },
+        "ms": 1884
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B07",
+      "question": "How many orders did we have in September?",
+      "role": "guest",
+      "tests": "guest has no access",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "order_count",
+        "value": null,
+        "message": "You don't have access to Orders.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1546,
+            "usage": {
+              "input_tokens": 791,
+              "output_tokens": 52
+            },
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "All regions and channels are included."
+          }
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 52
+        },
+        "ms": 1546
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B08",
+      "question": "Gross sales for South on October 19",
+      "role": "analyst",
+      "tests": "silent gap: load marked complete, no rows",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1401,
+            "usage": {
+              "input_tokens": 790,
+              "output_tokens": 52
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-19",
+              "end": "2026-10-19"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": "All channels are included."
+          },
+          "blockers": [
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 52
+        },
+        "ms": 1401
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B10",
+      "question": "Online GMV for the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct affects online too",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2431,
+            "usage": {
+              "input_tokens": 791,
+              "output_tokens": 109
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": "Interpreted GMV as gross sales and last 7 days as the seven full days ending yesterday."
+          },
+          "blockers": [
+            "No rows for South online on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 109
+        },
+        "ms": 2431
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B12",
+      "question": "Sales net revenue for October so far",
+      "role": "sales",
+      "tests": "includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_sales",
+        "value": null,
+        "message": "Net revenue (Sales) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 2227,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 61
+            },
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-01",
+              "end": "2026-10-22"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "“October so far” is interpreted as month-to-date ending today."
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most.",
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete.",
+            "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+          ]
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 61
+        },
+        "ms": 2227
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B13",
+      "question": "Gross sales for August",
+      "role": "analyst",
+      "tests": "before the data window",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 3037,
+            "usage": {
+              "input_tokens": 786,
+              "output_tokens": 129
+            },
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-08-01",
+              "end": "2026-08-31"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": "August resolves to 2026-08-01 to 2026-08-31, which is before available data starts on 2026-09-01."
+          },
+          "blockers": [
+            "Data starts on 2026-09-01; the period begins on 2026-08-01."
+          ]
+        },
+        "usage": {
+          "input_tokens": 786,
+          "output_tokens": 129
+        },
+        "ms": 3037
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B14",
+      "question": "Finance net revenue for East this week",
+      "role": "finance",
+      "tests": "this week includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "Net revenue (Finance) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "llm",
+            "provider": "openai",
+            "model": "gpt-5.5",
+            "latency_ms": 1528,
+            "usage": {
+              "input_tokens": 789,
+              "output_tokens": 59
+            },
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-19",
+              "end": "2026-10-22"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": "This week is resolved as Monday through today."
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+          ]
+        },
+        "usage": {
+          "input_tokens": 789,
+          "output_tokens": 59
+        },
+        "ms": 1528
+      },
+      "verdict": "correct"
+    }
+  ]
+}

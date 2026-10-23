@@ -1,0 +1,1528 @@
+{
+  "arm": "rules",
+  "eval_version": "v2",
+  "model": null,
+  "run_at": "2026-10-22T09:27:12.523Z",
+  "summary": {
+    "total": 41,
+    "counts": {
+      "correct": 37,
+      "false_approval": 0,
+      "wrong_number": 4,
+      "unnecessary_block": 0,
+      "safe_mismatch": 0,
+      "error": 0
+    },
+    "byGroup": {
+      "answer": {
+        "total": 19,
+        "correct": 15
+      },
+      "clarify": {
+        "total": 10,
+        "correct": 10
+      },
+      "decline": {
+        "total": 12,
+        "correct": 12
+      }
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "A01",
+      "question": "What was finance net revenue in September?",
+      "role": "analyst",
+      "tests": "clean month, explicit definition",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 36304662,
+        "message": "Net revenue (Finance): ₹3,63,04,662",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 12
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A02",
+      "question": "How many orders did we get last month?",
+      "role": "analyst",
+      "tests": "relative month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 22152,
+        "message": "Orders: 22,152 orders",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 3
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A03",
+      "question": "What was gross sales for the North region last week?",
+      "role": "analyst",
+      "tests": "West quality failure is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 2951314,
+        "message": "Gross sales: ₹29,51,314",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A04",
+      "question": "What was Sales net revenue for the online channel yesterday?",
+      "role": "sales",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 636128,
+        "message": "Net revenue (Sales): ₹6,36,128",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A05",
+      "question": "What was our average order value in East from October 1 to October 7?",
+      "role": "analyst",
+      "tests": "ratio metric, explicit range",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-01",
+        "end": "2026-10-07",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 1995.51,
+        "message": "Average order value: ₹1,996",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-10-01",
+              "end": "2026-10-01"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 6
+      },
+      "verdict": "wrong_number"
+    },
+    {
+      "id": "A06",
+      "question": "GMV on 5 October 2026",
+      "role": "analyst",
+      "tests": "synonym, single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-05"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 1406436,
+        "message": "Gross sales: ₹14,06,436",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-05",
+              "end": "2026-10-05"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A07",
+      "question": "Finance net revenue for South last week",
+      "role": "finance",
+      "tests": "South gap is on the 19th, outside last week",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 2385139,
+        "message": "Net revenue (Finance): ₹23,85,139",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A08",
+      "question": "How many online orders were there yesterday?",
+      "role": "analyst",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 274,
+        "message": "Orders: 274 orders",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A09",
+      "question": "Gross sales in the West region on October 13",
+      "role": "analyst",
+      "tests": "day next to the failed quality check",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-13",
+        "end": "2026-10-13",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 351220,
+        "message": "Gross sales: ₹3,51,220",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-13",
+              "end": "2026-10-13"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 2
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A10",
+      "question": "What was the topline for East last month?",
+      "role": "executive",
+      "tests": "synonym",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-09-01",
+        "end": "2026-09-30",
+        "regions": [
+          "East"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 8243208,
+        "message": "Gross sales: ₹82,43,208",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 2
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A11",
+      "question": "Number of orders in North stores from Oct 15 to Oct 20",
+      "role": "analyst",
+      "tests": "region and channel scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-15",
+        "end": "2026-10-20",
+        "regions": [
+          "North"
+        ],
+        "channels": [
+          "store"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 125,
+        "message": "Orders: 125 orders",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-15"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [
+              "store"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "wrong_number"
+    },
+    {
+      "id": "A12",
+      "question": "What was the average order value across all regions in September?",
+      "role": "analyst",
+      "tests": "ratio metric over a month",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2050.41,
+        "message": "Average order value: ₹2,050",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A13",
+      "question": "Finance net revenue for the West region on October 20",
+      "role": "finance",
+      "tests": "clean single day",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-20",
+        "end": "2026-10-20",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 307305,
+        "message": "Net revenue (Finance): ₹3,07,305",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-20",
+              "end": "2026-10-20"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A14",
+      "question": "What did Sales net revenue look like for East and North between 12 and 18 October?",
+      "role": "sales",
+      "tests": "two regions, quality failure out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "East",
+          "North"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_sales",
+        "value": 747450,
+        "message": "Net revenue (Sales): ₹7,47,450",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-18",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "North",
+              "East"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "wrong_number"
+    },
+    {
+      "id": "A15",
+      "question": "Give me finance net revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "pending store load is out of scope",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "start": "2026-10-21",
+        "end": "2026-10-21",
+        "channels": [
+          "online"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "net_revenue_finance",
+        "value": 535576,
+        "message": "Net revenue (Finance): ₹5,35,576",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A16",
+      "question": "How many orders did South get on October 18?",
+      "role": "analyst",
+      "tests": "day before the South gap",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-18",
+        "end": "2026-10-18",
+        "regions": [
+          "South"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 240,
+        "message": "Orders: 240 orders",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-18",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A17",
+      "question": "What were gross sales for West in the week of 5 October?",
+      "role": "analyst",
+      "tests": "paraphrased period",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "start": "2026-10-05",
+        "end": "2026-10-11",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "gross_sales",
+        "value": 362524,
+        "message": "Gross sales: ₹3,62,524",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-05",
+              "end": "2026-10-05"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "wrong_number"
+    },
+    {
+      "id": "A18",
+      "question": "Total store orders last week",
+      "role": "analyst",
+      "tests": "West returns check failed, but orders don't use returns (was B09 in v1)",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "channels": [
+          "store"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "order_count",
+        "value": 3286,
+        "message": "Orders: 3,286 orders",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [],
+            "channels": [
+              "store"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "A19",
+      "question": "What was AOV for West last week?",
+      "role": "analyst",
+      "tests": "West returns check failed, but AOV is gross ÷ orders (was B11 in v1)",
+      "expected": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "start": "2026-10-12",
+        "end": "2026-10-18",
+        "regions": [
+          "West"
+        ]
+      },
+      "got": {
+        "outcome": "answer",
+        "metric_id": "average_order_value",
+        "value": 2099.44,
+        "message": "Average order value: ₹2,099",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "average_order_value"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C01",
+      "question": "What was revenue last month?",
+      "role": "analyst",
+      "tests": "revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C02",
+      "question": "How much net revenue did North make last week?",
+      "role": "analyst",
+      "tests": "net revenue: Finance or Sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C03",
+      "question": "What were our sales in September?",
+      "role": "analyst",
+      "tests": "sales: gross or net",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Gross sales or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C04",
+      "question": "Revenue for the online channel yesterday",
+      "role": "executive",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C05",
+      "question": "What was the West region's revenue on October 13?",
+      "role": "analyst",
+      "tests": "ambiguous metric on a clean scope",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-13",
+              "end": "2026-10-13"
+            },
+            "regions": [
+              "West"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C06",
+      "question": "How are we doing?",
+      "role": "executive",
+      "tests": "no metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "Which metric do you mean?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [],
+            "period": null,
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C07",
+      "question": "Gross sales for North",
+      "role": "analyst",
+      "tests": "no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "For which period do you want Gross sales?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": null,
+            "regions": [
+              "North"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C08",
+      "question": "Show me the net revenue trend",
+      "role": "analyst",
+      "tests": "ambiguous metric, no period",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": null,
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C09",
+      "question": "What was revenue in Q3?",
+      "role": "finance",
+      "tests": "ambiguous metric",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "This could mean Net revenue (Finance) or Net revenue (Sales). Which one?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance",
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-07-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "C10",
+      "question": "How much did we sell in the East in September?",
+      "role": "sales",
+      "tests": "sell: gross or net sales",
+      "expected": {
+        "outcome": "clarify"
+      },
+      "got": {
+        "outcome": "clarify",
+        "metric_id": null,
+        "value": null,
+        "message": "Which metric do you mean?",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B01",
+      "question": "What was finance net revenue last week?",
+      "role": "analyst",
+      "tests": "West returns quality check failed on 14 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "Net revenue (Finance) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-12",
+              "end": "2026-10-18"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+          ]
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B02",
+      "question": "Gross sales across all regions in the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct and pending store load on 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "Partial data: the store load for 2026-10-21 is still pending.",
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B03",
+      "question": "How many orders did we get yesterday?",
+      "role": "analyst",
+      "tests": "store load pending for 21 Oct",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "order_count",
+        "value": null,
+        "message": "Orders can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-10-21",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "Partial data: the store load for 2026-10-21 is still pending."
+          ]
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B04",
+      "question": "What were gross sales today?",
+      "role": "executive",
+      "tests": "day in progress",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-22",
+              "end": "2026-10-22"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+          ]
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B05",
+      "question": "What's our contribution margin for September?",
+      "role": "finance",
+      "tests": "draft metric",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "contribution_margin",
+        "value": null,
+        "message": "Contribution margin has no approved definition yet.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "contribution_margin"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B06",
+      "question": "What was finance net revenue in September?",
+      "role": "sales",
+      "tests": "role cannot see finance net revenue",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "You don't have access to Net revenue (Finance).",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B07",
+      "question": "How many orders did we have in September?",
+      "role": "guest",
+      "tests": "guest has no access",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "order_count",
+        "value": null,
+        "message": "You don't have access to Orders.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "order_count"
+            ],
+            "period": {
+              "start": "2026-09-01",
+              "end": "2026-09-30"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          }
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B08",
+      "question": "Gross sales for South on October 19",
+      "role": "analyst",
+      "tests": "silent gap: load marked complete, no rows",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-19",
+              "end": "2026-10-19"
+            },
+            "regions": [
+              "South"
+            ],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "ms": 2
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B10",
+      "question": "Online GMV for the last 7 days",
+      "role": "analyst",
+      "tests": "South gap on 19 Oct affects online too",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-10-15",
+              "end": "2026-10-21"
+            },
+            "regions": [],
+            "channels": [
+              "online"
+            ],
+            "notes": ""
+          },
+          "blockers": [
+            "No rows for South online on 2026-10-19, although the loads are marked complete."
+          ]
+        },
+        "ms": 2
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B12",
+      "question": "Sales net revenue for October so far",
+      "role": "sales",
+      "tests": "includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_sales",
+        "value": null,
+        "message": "Net revenue (Sales) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_sales"
+            ],
+            "period": {
+              "start": "2026-10-01",
+              "end": "2026-10-22"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most.",
+            "No rows for South online on 2026-10-19, South store on 2026-10-19, although the loads are marked complete.",
+            "returns_reconciliation failed for West on 2026-10-14: Returns are 2× the 28-day average; possible duplicate return events."
+          ]
+        },
+        "ms": 2
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B13",
+      "question": "Gross sales for August",
+      "role": "analyst",
+      "tests": "before the data window",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "gross_sales",
+        "value": null,
+        "message": "Gross sales can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "gross_sales"
+            ],
+            "period": {
+              "start": "2026-08-01",
+              "end": "2026-08-31"
+            },
+            "regions": [],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "Data starts on 2026-09-01; the period begins on 2026-08-01."
+          ]
+        },
+        "ms": 1
+      },
+      "verdict": "correct"
+    },
+    {
+      "id": "B14",
+      "question": "Finance net revenue for East this week",
+      "role": "finance",
+      "tests": "this week includes today and partial yesterday",
+      "expected": {
+        "outcome": "decline"
+      },
+      "got": {
+        "outcome": "decline",
+        "metric_id": "net_revenue_finance",
+        "value": null,
+        "message": "Net revenue (Finance) can't be reported reliably for this request.",
+        "detail": {
+          "interpretation": {
+            "source": "rules",
+            "metric_candidates": [
+              "net_revenue_finance"
+            ],
+            "period": {
+              "start": "2026-10-19",
+              "end": "2026-10-22"
+            },
+            "regions": [
+              "East"
+            ],
+            "channels": [],
+            "notes": ""
+          },
+          "blockers": [
+            "The period includes 2026-10-22 (today), which is still in progress. Data is loaded up to yesterday at most."
+          ]
+        },
+        "ms": 0
+      },
+      "verdict": "correct"
+    }
+  ]
+}

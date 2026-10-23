@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DataReady Playground</title>
+<style>
+:root {
+  --bg: #f6f5f1; --surface: #ffffff; --ink: #1b1f23; --muted: #5f6670; --line: #e2e0d8;
+  --accent: #2f5bd3; --accent-ink: #ffffff;
+  --ok: #1f7a4d; --ok-bg: #e5f3eb; --warn: #8a5a00; --warn-bg: #fbf0d9; --bad: #a3321f; --bad-bg: #f8e6e1;
+  --chip: #eef0f4; --code: #f1f0ea;
+  --radius: 10px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131518; --surface: #1c1f24; --ink: #e8e9eb; --muted: #9aa1ab; --line: #2e333a;
+    --accent: #7d9cf0; --accent-ink: #0f1115;
+    --ok: #6fcf9a; --ok-bg: #173226; --warn: #f0c46a; --warn-bg: #3a2e14; --bad: #f08b77; --bad-bg: #3d1f19;
+    --chip: #262a31; --code: #23272d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131518; --surface: #1c1f24; --ink: #e8e9eb; --muted: #9aa1ab; --line: #2e333a;
+  --accent: #7d9cf0; --accent-ink: #0f1115;
+  --ok: #6fcf9a; --ok-bg: #173226; --warn: #f0c46a; --warn-bg: #3a2e14; --bad: #f08b77; --bad-bg: #3d1f19;
+  --chip: #262a31; --code: #23272d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 22px; }
+h1 { font-size: 26px; margin: 0; letter-spacing: -0.3px; }
+.tagline { color: var(--muted); margin: 4px 0 0; max-width: 620px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font-size: 12px; padding: 4px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 18px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.card + .card { margin-top: 18px; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+label { display: block; font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+textarea, select { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+textarea { min-height: 76px; resize: vertical; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 9px 14px; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; margin-top: 14px; width: 100%; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.examples { display: flex; flex-direction: column; gap: 14px; }
+.examples h3 { font-size: 13px; margin: 0 0 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 13px; padding: 5px 10px; background: var(--chip); border: 0; border-radius: 999px; text-align: left; }
+.chip:hover { outline: 1px solid var(--accent); }
+.decision { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.badge { font-weight: 700; font-size: 12px; letter-spacing: 0.8px; padding: 4px 10px; border-radius: 6px; }
+.READY { background: var(--ok-bg); color: var(--ok); }
+.CLARIFY { background: var(--warn-bg); color: var(--warn); }
+.BLOCKED { background: var(--bad-bg); color: var(--bad); }
+.headline { font-size: 20px; font-weight: 600; margin: 4px 0 2px; overflow-wrap: anywhere; }
+.understood { margin-top: 14px; padding: 12px; background: var(--code); border-radius: 8px; font-size: 14px; }
+.understood dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 6px 0 0; }
+.understood dt { color: var(--muted); }
+.understood dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.understood .note { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+.options { display: grid; gap: 8px; margin-top: 12px; }
+.option { text-align: left; padding: 10px 12px; }
+.option b { display: block; }
+.option span { color: var(--muted); font-size: 13px; }
+.checks { list-style: none; padding: 0; margin: 14px 0 0; }
+.checks li { display: grid; grid-template-columns: 22px 150px 1fr; gap: 8px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 14px; }
+@media (max-width: 520px) { .checks li { grid-template-columns: 22px 1fr; } .checks li .detail { grid-column: 2; } }
+.icon { font-weight: 700; }
+.pass .icon { color: var(--ok); } .fail .icon { color: var(--bad); }
+.detail { color: var(--muted); overflow-wrap: anywhere; }
+.evidence { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.evidence code { background: var(--code); padding: 1px 5px; border-radius: 4px; }
+.empty { color: var(--muted); padding: 30px 6px; text-align: center; }
+.error { color: var(--bad); margin-top: 10px; }
+details { margin-top: 18px; }
+summary { cursor: pointer; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 6px 12px; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.compare-card { margin-top: 18px; }
+.compare-head { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between; }
+.compare-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 640px; }
+.compare-head button { white-space: nowrap; }
+.expected { margin: 12px 0 0; font-size: 14px; padding: 8px 12px; border-radius: 8px; background: var(--code); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+@media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+.lane { border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; }
+.lane h3 { margin: 0 0 2px; font-size: 15px; }
+.lane .sub { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+.outcome { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.answer { background: var(--ok-bg); color: var(--ok); }
+.clarify { background: var(--warn-bg); color: var(--warn); }
+.decline { background: var(--bad-bg); color: var(--bad); }
+.error-badge { background: var(--chip); color: var(--muted); }
+.verdict { font-size: 13px; font-weight: 600; }
+.verdict.good { color: var(--ok); } .verdict.badv { color: var(--bad); } .verdict.meh { color: var(--warn); }
+.says { margin: 6px 0 10px; overflow-wrap: anywhere; white-space: pre-wrap; }
+.timeline { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.timeline li { counter-increment: step; position: relative; padding: 6px 0 6px 28px; border-top: 1px solid var(--line); font-size: 13px; }
+.timeline li::before { content: counter(step); position: absolute; left: 0; top: 7px; width: 18px; height: 18px; border-radius: 50%; background: var(--chip); color: var(--muted); font-size: 11px; display: grid; place-items: center; }
+.timeline code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.timeline .detail { display: block; overflow-wrap: anywhere; }
+.meta { margin-top: 8px; font-size: 12px; color: var(--muted); }
+/* Replay mode: a clean stage for screen recording. */
+#stage { display: none; }
+body.replay #stage { display: block; }
+body.replay .grid, body.replay details.card, body.replay #compare, body.replay .compare-head p { display: none; }
+body.replay header .tagline { display: none; }
+.stage-caption { font-size: 24px; font-weight: 650; letter-spacing: -0.3px; min-height: 66px; margin: 6px 0 10px; transition: opacity 0.4s; }
+.stage-caption.dim { opacity: 0; }
+.stage-q { font-size: 20px; padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); margin-bottom: 4px; opacity: 0; transition: opacity 0.5s; }
+.stage-q.show { opacity: 1; }
+.stage-q small { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+.stage-controls { display: flex; gap: 10px; align-items: center; margin: 12px 0 0; flex-wrap: wrap; }
+.stage-note { color: var(--muted); font-size: 12px; }
+.timeline li.new { animation: rise 0.45s ease-out; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+mark { background: var(--warn-bg); color: var(--warn); padding: 0 3px; border-radius: 3px; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .timeline li.new { animation: none; } .stage-caption, .stage-q { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>DataReady</h1>
+      <p class="tagline">A readiness check an AI agent calls before it answers a metric question. An AI model interprets the question; deterministic code decides whether the answer is ready.</p>
+    </div>
+    <div class="pills" id="pills"></div>
+  </header>
+
+  <div class="grid">
+    <div>
+      <section class="card" aria-labelledby="ask-h">
+        <h2 id="ask-h">Ask a question</h2>
+        <label for="question">Question</label>
+        <textarea id="question">What was revenue last month?</textarea>
+        <div class="row">
+          <div>
+            <label for="role">Asking as</label>
+            <select id="role"></select>
+          </div>
+          <div>
+            <label id="interp-label">Interpreter</label>
+            <div class="seg" role="group" aria-labelledby="interp-label">
+              <button type="button" data-interp="rules" aria-pressed="true">Rules</button>
+              <button type="button" data-interp="llm" aria-pressed="false">AI model</button>
+            </div>
+          </div>
+        </div>
+        <button class="primary" id="check">Check readiness</button>
+        <div class="error" id="error" role="alert"></div>
+      </section>
+
+      <section class="card" aria-labelledby="ex-h">
+        <h2 id="ex-h">Try these</h2>
+        <div class="examples" id="examples"></div>
+      </section>
+    </div>
+
+    <section class="card" aria-live="polite" id="result">
+      <div class="empty">Ask a question to see what DataReady decides, and why.</div>
+    </section>
+  </div>
+
+  <section id="stage" aria-live="polite">
+    <p class="stage-caption" id="stage-caption"></p>
+    <div class="stage-q" id="stage-q"></div>
+    <div class="stage-controls">
+      <button class="primary" id="stage-play" style="width:auto;margin:0">▶ Play</button>
+      <span class="stage-note" id="stage-note"></span>
+    </div>
+  </section>
+
+  <section class="card compare-card" aria-labelledby="cmp-h">
+    <div class="compare-head">
+      <div>
+        <h2 id="cmp-h">Same question, two agents</h2>
+        <p>Same model, same metric catalogue, same calendar conventions. The only difference: the agent on the right must go through DataReady before it answers. Runs the question above.</p>
+      </div>
+      <button id="compare">Run both agents</button>
+    </div>
+    <div id="expected"></div>
+    <div class="compare" aria-live="polite">
+      <div class="lane" id="lane-baseline">
+        <h3>Without DataReady</h3>
+        <p class="sub">Catalogue, query tool, data-health tool, careful prompt</p>
+        <div class="empty">Not run yet.</div>
+      </div>
+      <div class="lane" id="lane-gated">
+        <h3>With DataReady</h3>
+        <p class="sub">Its only data tool is DataReady's readiness check</p>
+        <div class="empty">Not run yet.</div>
+      </div>
+    </div>
+  </section>
+
+  <details class="card">
+    <summary>What's planted in the sample data</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Problem</th><th>Where</th><th>What a plain query would do</th></tr></thead>
+        <tbody>
+          <tr><td>Silent coverage gap</td><td>South, 19 Oct: no rows, load marked complete</td><td>Quietly under-report any total that includes it</td></tr>
+          <tr><td>Partial day</td><td>21 Oct, store channel load pending</td><td>Report "yesterday" without store sales</td></tr>
+          <tr><td>Failed quality check</td><td>West, 14 Oct: duplicated returns</td><td>Understate net revenue</td></tr>
+          <tr><td>Day in progress</td><td>22 Oct (today)</td><td>Report a partial day as if complete</td></tr>
+          <tr><td>Draft metric</td><td>Contribution margin is uncertified</td><td>Use an unapproved definition</td></tr>
+          <tr><td>Access rules</td><td>Finance net revenue: finance, analyst, executive only</td><td>Leak a figure to the wrong role</td></tr>
+          <tr><td>Ambiguous terms</td><td>"revenue", "net revenue", "sales"</td><td>Silently pick one definition (they differ by about 15%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</div>
+
+<script>
+const EXAMPLES = {
+  "Clean answers": [
+    ["Finance net revenue for South last week", "finance"],
+    ["How many online orders were there yesterday?", "analyst"],
+    ["What was the topline for East last month?", "executive"],
+  ],
+  "Needs a choice": [
+    ["What was revenue last month?", "analyst"],
+    ["What were our sales in September?", "analyst"],
+    ["Gross sales for North", "analyst"],
+  ],
+  "Planted problems": [
+    ["How many orders did we get yesterday?", "analyst"],
+    ["What was finance net revenue last week?", "analyst"],
+    ["Gross sales for South on October 19", "analyst"],
+    ["What was finance net revenue in September?", "sales"],
+    ["What's our contribution margin for September?", "finance"],
+  ],
+  "Where rules misread": [
+    ["What was our average order value in East from October 1 to October 7?", "analyst"],
+    ["What were gross sales for West in the week of 5 October?", "analyst"],
+  ],
+};
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+let interpreter = "rules";
+let context;
+
+async function api(path, body) {
+  // The published prototype supplies an in-browser implementation of these endpoints.
+  if (window.dataReadyApi) return window.dataReadyApi(path, body);
+  const res = await fetch(path, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
+}
+
+function setInterpreter(value) {
+  interpreter = value;
+  document.querySelectorAll("[data-interp]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.interp === value)));
+}
+
+async function init() {
+  context = await api("/api/context");
+  const now = new Date(context.now);
+  $("pills").innerHTML = [
+    `Demo clock: ${now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", weekday: "short", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })} IST`,
+    esc(context.company),
+    context.llm ? `AI model: ${esc(context.llm.model)}` : "AI model: not configured",
+    ...(context.note ? [esc(context.note)] : []),
+  ].map((t) => `<span class="pill">${t}</span>`).join("");
+  $("role").innerHTML = Object.entries(context.roles).map(([id, label]) => `<option value="${id}" ${id === "analyst" ? "selected" : ""}>${esc(label)} (${id})</option>`).join("");
+  const llmBtn = document.querySelector('[data-interp="llm"]');
+  if (!context.llm) {
+    llmBtn.disabled = true;
+    llmBtn.title = "Add an API key to .env to enable";
+    $("compare").disabled = true;
+    $("compare").title = "Add an API key to .env to run the agents";
+  } else if (context.llm_default !== false) setInterpreter("llm");
+  if (context.recorded_agents) {
+    $("compare").disabled = false;
+    $("compare").title = "";
+    $("compare").textContent = "Show recorded runs";
+    document.querySelector(".compare-head p").textContent =
+      "Same model, same metric catalogue, same calendar conventions. The only difference: the agent on the right must go through DataReady. These are the recorded runs from the evaluation (gpt-5.5), so they work for any of the 41 eval questions, including the examples on the left.";
+  }
+  $("examples").innerHTML = Object.entries(EXAMPLES).map(([group, list]) =>
+    `<div><h3>${esc(group)}</h3><div class="chips">${list.map(([q, role]) => `<button class="chip" data-q="${esc(q)}" data-role="${role}">${esc(q)}${role !== "analyst" ? ` <span class="detail">· ${role}</span>` : ""}</button>`).join("")}</div></div>`
+  ).join("");
+}
+
+async function check(metricId) {
+  $("error").textContent = "";
+  $("check").disabled = true;
+  $("check").textContent = "Checking…";
+  try {
+    const data = await api("/api/check", { question: $("question").value, role: $("role").value, interpreter, metric_id: metricId });
+    render(data);
+  } catch (err) {
+    $("error").textContent = err.message;
+  } finally {
+    $("check").disabled = false;
+    $("check").textContent = "Check readiness";
+  }
+}
+
+function scopeText(req) {
+  const p = req.period ? (req.period.start === req.period.end ? req.period.start : `${req.period.start} → ${req.period.end}`) : "not given";
+  return {
+    period: p,
+    regions: req.regions.length === 4 ? "All regions" : req.regions.join(", "),
+    channels: req.channels.length === 2 ? "All channels" : req.channels.join(", "),
+  };
+}
+
+function render({ interpretation, assessment: a }) {
+  const metricLabels = a.request.metric_candidates.map((id) => context.metrics.find((m) => m.id === id)?.label ?? id);
+  const s = scopeText(a.request);
+  const options = (a.options || []).map((o) =>
+    `<button class="option" data-metric="${esc(o.id)}"><b>${esc(o.label)}</b><span>${esc(o.formula)} · ${esc(o.description)}</span></button>`).join("");
+  const checks = a.checks.map((c) =>
+    `<li class="${c.status}"><span class="icon" aria-label="${c.status}">${c.status === "pass" ? "✓" : "✕"}</span><span>${esc(c.label)}</span><span class="detail">${esc(c.detail)}</span></li>`).join("");
+  const evidence = a.evidence
+    ? `<p class="evidence">${a.evidence.rows_used} rows · ${esc(a.evidence.definition)} · owner ${esc(a.evidence.owner)} · valid until ${new Date(a.expires_at).toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit" })} IST · fingerprint <code>${esc(a.fingerprint)}</code></p>`
+    : "";
+  $("result").innerHTML = `
+    <div class="decision"><span class="badge ${a.decision}">${a.decision}</span><span class="detail">Interpreter: ${esc(interpretation.source === "llm" ? interpretation.model : "rules")}${interpretation.latency_ms ? ` · ${interpretation.latency_ms} ms` : ""}</span></div>
+    <p class="headline">${esc(a.headline)}</p>
+    ${options ? `<div class="options">${options}</div>` : ""}
+    <div class="understood">
+      <b>What DataReady understood</b>
+      <dl>
+        <dt>Metric</dt><dd>${esc(metricLabels.join(" or ") || "none recognised")}</dd>
+        <dt>Period</dt><dd>${esc(s.period)}</dd>
+        <dt>Regions</dt><dd>${esc(s.regions)}</dd>
+        <dt>Channels</dt><dd>${esc(s.channels)}</dd>
+      </dl>
+      ${interpretation.notes ? `<p class="note">${esc(interpretation.notes)}</p>` : ""}
+      <p class="note">If this isn't what you asked, the answer is wrong even when every check passes.</p>
+    </div>
+    <ul class="checks">${checks}</ul>
+    ${evidence}`;
+  document.querySelectorAll("[data-metric]").forEach((b) => b.addEventListener("click", () => check(b.dataset.metric)));
+}
+
+const LANES = {
+  baseline: { title: "Without DataReady", sub: "Catalogue, query tool, data-health tool, careful prompt" },
+  gated: { title: "With DataReady", sub: "Its only data tool is DataReady's readiness check" },
+};
+const OUTCOME_LABEL = { answer: "ANSWERED", clarify: "ASKED", decline: "DECLINED", error: "ERROR" };
+
+function labelFor(question, role) {
+  const q = question.trim().toLowerCase();
+  return context.labels.find((l) => l.question.toLowerCase() === q && l.role === role);
+}
+
+function renderExpected() {
+  const label = labelFor($("question").value, $("role").value);
+  const word = { answer: "answer with a number", clarify: "ask the user to clarify", decline: "decline" };
+  $("expected").innerHTML = label
+    ? `<p class="expected">From the eval set (<b>${esc(label.id)}</b>): the right response is to <b>${word[label.expected]}</b>. <span class="detail">${esc(label.tests)}</span></p>`
+    : "";
+  return label;
+}
+
+function lane(arm, inner) {
+  $(`lane-${arm}`).innerHTML = `<h3>${LANES[arm].title}</h3><p class="sub">${LANES[arm].sub}</p>${inner}`;
+}
+
+// One line per tool call: what the agent asked for, and what came back.
+function describeCall({ tool, input, output }) {
+  const o = output ?? {};
+  if (o.error) return [`<code>${esc(tool)}</code>`, `Error: ${o.error}`];
+  switch (tool) {
+    case "list_metrics":
+      return ["<code>list_metrics</code>", `${o.metrics?.length ?? 0} metrics in the catalogue`];
+    case "query_metric": {
+      const scope = [input.regions?.join("+") || "all regions", input.channels?.join("+") || "all channels"].join(", ");
+      return [`<code>query_metric</code> ${esc(input.metric_id)}`, `${input.start_date} → ${input.end_date}, ${scope} → ${Number(o.value).toLocaleString("en-IN")} from ${o.rows_scanned} rows`];
+    }
+    case "get_data_health":
+      return [
+        `<code>get_data_health</code> ${esc(input.start_date)} → ${esc(input.end_date)}`,
+        `${o.quality_checks_failed?.length ?? 0} failed check(s), ${o.loads_not_complete?.length ?? 0} pending load(s), ${o.missing_check_runs?.length ?? 0} missing check run(s)`,
+      ];
+    case "check_readiness":
+      return [`<code>check_readiness</code>${input.metric_id ? ` (chose ${esc(input.metric_id)})` : ""}`, `${o.decision}: ${o.headline}${o.blockers?.length ? ` ${o.blockers.join(" ")}` : ""}`];
+    default:
+      return [`<code>${esc(tool)}</code>`, ""];
+  }
+}
+
+function verdictFor(label, got) {
+  if (!label || got.outcome === "error") return "";
+  if (got.outcome === label.expected) return `<span class="verdict good">✓ Matches the label</span>`;
+  if (got.outcome === "answer") return `<span class="verdict badv">✕ Gave a number it shouldn't have</span>`;
+  if (label.expected === "answer") return `<span class="verdict meh">✕ Didn't answer when it could have</span>`;
+  return `<span class="verdict meh">≈ Safe, but a different kind of non-answer</span>`;
+}
+
+async function runLane(arm, question, role, label) {
+  const started = Date.now();
+  lane(arm, `<div class="empty">Running…</div>`);
+  try {
+    const got = await api("/api/agent", { arm, question, role });
+    const steps = (got.trace ?? []).map(describeCall).map(([what, detail]) => `<li>${what}<span class="detail">${esc(detail)}</span></li>`).join("");
+    const value = got.outcome === "answer" && got.value != null ? ` · ${Number(got.value).toLocaleString("en-IN")}` : "";
+    lane(arm, `
+      <div class="outcome"><span class="badge ${got.outcome === "error" ? "error-badge" : got.outcome}">${OUTCOME_LABEL[got.outcome] ?? got.outcome}${esc(value)}</span>${verdictFor(label, got)}</div>
+      <p class="says">${esc(got.message)}</p>
+      ${steps ? `<ol class="timeline" aria-label="Tool calls">${steps}</ol>` : `<p class="detail">No tool calls.</p>`}
+      <p class="meta">${got.seconds ?? ((Date.now() - started) / 1000).toFixed(1)} s · ${got.usage?.input_tokens ?? 0} tokens in / ${got.usage?.output_tokens ?? 0} out${got.recorded ? " · recorded run" : ""}</p>`);
+  } catch (err) {
+    lane(arm, `<p class="error">${esc(err.message)}</p>`);
+  }
+}
+
+async function compare() {
+  const question = $("question").value.trim();
+  const role = $("role").value;
+  if (!question) return;
+  const label = renderExpected();
+  $("compare").disabled = true;
+  $("compare").textContent = "Running…";
+  await Promise.all([runLane("baseline", question, role, label), runLane("gated", question, role, label)]);
+  $("compare").disabled = false;
+  $("compare").textContent = context.recorded_agents ? "Show recorded runs" : "Run both agents";
+}
+
+// ---- Replay mode (?replay=b10): plays back a real recorded run for screen recording ----
+const inrFmt = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
+const HIGHLIGHTS = [/\d+ missing check run\(s\)/g, /from \d+ rows/g, /[^.;,]*\bwas missing\b/gi];
+const highlight = (html) => HIGHLIGHTS.reduce((h, re) => h.replace(re, (m) => `<mark>${m}</mark>`), html);
+
+// Only steps added since the last draw animate, so earlier steps don't flicker on video.
+const drawnSteps = { baseline: 0, gated: 0 };
+function replayLane(arm, data, { steps = 0, outcome = false, marks = false, verdict = false, working = true }) {
+  const shown = data.trace.slice(0, steps).map(describeCall)
+    .map(([what, detail], i) => `<li class="${i >= drawnSteps[arm] ? "new" : ""}">${what}<span class="detail">${marks ? highlight(esc(detail)) : esc(detail)}</span></li>`).join("");
+  drawnSteps[arm] = steps;
+  const value = data.outcome === "answer" && data.value != null ? ` · ${inrFmt.format(data.value)}` : "";
+  const label = { expected: replay.question.expected };
+  lane(arm, `
+    ${outcome ? `<div class="outcome"><span class="badge ${data.outcome}">${OUTCOME_LABEL[data.outcome]}${esc(value)}</span>${verdict ? verdictFor(label, data) : ""}</div>
+      <p class="says">${marks ? highlight(esc(data.message)) : esc(data.message)}</p>` : ""}
+    ${shown ? `<ol class="timeline" aria-label="Tool calls">${shown}</ol>` : ""}
+    ${!outcome && working ? `<p class="detail">Working…</p>` : ""}
+    ${verdict ? `<p class="meta">${data.seconds} s · ${data.usage.input_tokens} tokens in / ${data.usage.output_tokens} out</p>` : ""}`);
+}
+
+let replay = null;
+let timers = [];
+
+function playReplay() {
+  timers.forEach(clearTimeout);
+  timers = [];
+  const speed = Number(new URLSearchParams(location.search).get("speed")) || 1;
+  const { question: q, lanes: L, consistency: c } = replay;
+  const st = { baseline: { steps: 0, working: false }, gated: { steps: 0, working: false } };
+  const draw = () => { replayLane("baseline", L.baseline, st.baseline); replayLane("gated", L.gated, st.gated); };
+  const caption = (text) => {
+    $("stage-caption").classList.add("dim");
+    timers.push(setTimeout(() => { $("stage-caption").textContent = text; $("stage-caption").classList.remove("dim"); }, 350));
+  };
+  const at = (sec, fn) => timers.push(setTimeout(fn, (sec * 1000) / speed));
+  const all = (patch) => { Object.assign(st.baseline, patch); Object.assign(st.gated, patch); draw(); };
+
+  $("stage-q").classList.remove("show");
+  $("expected").innerHTML = "";
+  drawnSteps.baseline = drawnSteps.gated = 0;
+  draw();
+  at(0, () => caption("One question. Two AI agents."));
+  at(2.5, () => $("stage-q").classList.add("show"));
+  at(5, () => caption("Same model, same metric catalogue, same tools. One difference: the agent on the right must ask DataReady first."));
+  at(9, () => all({ working: true }));
+  at(10.5, () => { st.baseline.steps = 1; st.gated.steps = 1; draw(); });
+  at(13.5, () => { st.gated.outcome = true; draw(); });
+  at(15, () => caption("With DataReady: blocked. South has no rows for 19 October, though the load says complete."));
+  at(19, () => { st.baseline.steps = 2; draw(); });
+  at(23, () => { st.baseline.steps = 3; draw(); });
+  at(26, () => { st.baseline.outcome = true; draw(); });
+  at(27, () => caption(`Without the gate: a confident number, ${inrFmt.format(L.baseline.value)}.`));
+  at(32, () => { all({ marks: true }); caption("It saw the warning. It scanned 27 of 28 rows. It even wrote the problem down."); });
+  at(39, () => caption("And it answered anyway. The number is about 3.3% short. Plausible enough that nobody would question it."));
+  at(46, () => { renderExpected(); all({ verdict: true }); caption("The right response was to decline."); });
+  at(51, () => caption(`Same wrong number in ${c.baseline.same_as_shown} of ${c.baseline.runs} runs. With DataReady: 0 false approvals across 41 questions, 3 runs.`));
+  at(58, () => caption("A prompt is advice. A gate is policy."));
+  at(62, () => { $("stage-play").textContent = "↻ Replay"; });
+}
+
+async function initReplay(id) {
+  replay = await api(`/replays/${encodeURIComponent(id)}.json`);
+  document.body.classList.add("replay");
+  $("question").value = replay.question.question;
+  $("role").value = replay.question.role;
+  $("stage-q").innerHTML = `“${esc(replay.question.question)}”<small>Asked by: ${esc(context.roles[replay.question.role])} · Demo clock: Thu 22 Oct 2026, 10:00 IST</small>`;
+  const when = new Date(replay.lanes.baseline.run_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  $("stage-note").textContent = `Replay of a recorded eval run (${replay.question.id}, ${when}, ${replay.lanes.baseline.model}). Tool calls and answers are shown exactly as recorded.`;
+  $("stage-caption").textContent = "Press Play when you're recording.";
+  $("stage-play").addEventListener("click", playReplay);
+  replayLane("baseline", replay.lanes.baseline, { working: false });
+  replayLane("gated", replay.lanes.gated, { working: false });
+}
+
+$("compare").addEventListener("click", compare);
+$("question").addEventListener("input", renderExpected);
+$("role").addEventListener("change", renderExpected);
+document.querySelectorAll("[data-interp]").forEach((b) => b.addEventListener("click", () => setInterpreter(b.dataset.interp)));
+$("check").addEventListener("click", () => check());
+$("question").addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) check(); });
+$("examples").addEventListener("click", (e) => {
+  const chip = e.target.closest("[data-q]");
+  if (!chip) return;
+  $("question").value = chip.dataset.q;
+  $("role").value = chip.dataset.role;
+  renderExpected();
+  check();
+});
+init()
+  .then(() => {
+    // ?replay=b10 locally; #replay on the published page, where query strings don't reach the page.
+    const id = new URLSearchParams(location.search).get("replay") || (location.hash === "#replay" ? "b10" : null);
+    if (id) return initReplay(id);
+  })
+  .catch((err) => { $("error").textContent = err.message; });
+</script>
+</body>
+</html>

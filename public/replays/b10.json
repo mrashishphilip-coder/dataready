@@ -1,0 +1,254 @@
+{
+  "question": {
+    "id": "B10",
+    "question": "Online GMV for the last 7 days",
+    "role": "analyst",
+    "expected": "decline",
+    "tests": "South gap on 19 Oct affects online too"
+  },
+  "lanes": {
+    "baseline": {
+      "run_at": "2026-10-22T09:29:03.206Z",
+      "model": "openai · gpt-5.5",
+      "verdict": "false_approval",
+      "outcome": "answer",
+      "value": 4475299,
+      "message": "Online GMV (certified Gross sales) for the last 7 full days (2026-10-15 to 2026-10-21) was 4,475,299. Data was refreshed at 2026-10-22 06:10 IST; online loads were complete and no quality checks failed, though the South region check for 2026-10-19 was missing.",
+      "usage": {
+        "input_tokens": 3551,
+        "output_tokens": 564
+      },
+      "seconds": 10.5,
+      "trace": [
+        {
+          "tool": "list_metrics",
+          "input": {},
+          "output": {
+            "metrics": [
+              {
+                "id": "net_revenue_finance",
+                "label": "Net revenue (Finance)",
+                "description": "Revenue after returns and indirect tax. The figure used in financial reporting.",
+                "formula": "gross − returns − tax",
+                "also_called": [
+                  "finance net revenue",
+                  "net revenue (finance)",
+                  "finance revenue",
+                  "reported revenue"
+                ],
+                "certified": true,
+                "owner": "Priya Nair · Finance Data",
+                "version": "2.1"
+              },
+              {
+                "id": "net_revenue_sales",
+                "label": "Net revenue (Sales)",
+                "description": "Revenue after returns, before tax. Used for sales targets and incentives.",
+                "formula": "gross − returns",
+                "also_called": [
+                  "sales net revenue",
+                  "net revenue (sales)",
+                  "net sales"
+                ],
+                "certified": true,
+                "owner": "Arjun Mehta · Sales Operations",
+                "version": "1.4"
+              },
+              {
+                "id": "gross_sales",
+                "label": "Gross sales",
+                "description": "Value of all orders before returns and tax.",
+                "formula": "gross",
+                "also_called": [
+                  "gross sales",
+                  "gmv",
+                  "gross merchandise value",
+                  "topline"
+                ],
+                "certified": true,
+                "owner": "Arjun Mehta · Sales Operations",
+                "version": "1.0"
+              },
+              {
+                "id": "order_count",
+                "label": "Orders",
+                "description": "Number of orders placed.",
+                "formula": "orders",
+                "also_called": [
+                  "orders",
+                  "order count",
+                  "number of orders",
+                  "order volume"
+                ],
+                "certified": true,
+                "owner": "Central Analytics",
+                "version": "1.0"
+              },
+              {
+                "id": "average_order_value",
+                "label": "Average order value",
+                "description": "Gross sales divided by orders.",
+                "formula": "gross ÷ orders",
+                "also_called": [
+                  "average order value",
+                  "aov",
+                  "basket size"
+                ],
+                "certified": true,
+                "owner": "Central Analytics",
+                "version": "1.2"
+              },
+              {
+                "id": "contribution_margin",
+                "label": "Contribution margin",
+                "description": "Draft. Cost allocation rules are still being agreed with Finance.",
+                "formula": "not yet approved",
+                "also_called": [
+                  "contribution margin",
+                  "margin"
+                ],
+                "certified": false,
+                "owner": "Priya Nair · Finance Data",
+                "version": "0.3-draft"
+              }
+            ],
+            "ambiguous_terms": {
+              "revenue": [
+                "net_revenue_finance",
+                "net_revenue_sales"
+              ],
+              "net revenue": [
+                "net_revenue_finance",
+                "net_revenue_sales"
+              ],
+              "sales": [
+                "gross_sales",
+                "net_revenue_sales"
+              ]
+            }
+          }
+        },
+        {
+          "tool": "get_data_health",
+          "input": {
+            "start_date": "2026-10-15",
+            "end_date": "2026-10-21"
+          },
+          "output": {
+            "table": "sales_daily",
+            "last_refreshed_at": "2026-10-22T06:10:00+05:30",
+            "loads_complete": 13,
+            "loads_not_complete": [
+              {
+                "date": "2026-10-21",
+                "channel": "store",
+                "status": "pending"
+              }
+            ],
+            "quality_checks_passed": 81,
+            "quality_checks_failed": [],
+            "missing_check_runs": [
+              {
+                "date": "2026-10-19",
+                "region": "South"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "query_metric",
+          "input": {
+            "metric_id": "gross_sales",
+            "start_date": "2026-10-15",
+            "end_date": "2026-10-21",
+            "regions": [],
+            "channels": [
+              "online"
+            ]
+          },
+          "output": {
+            "metric_id": "gross_sales",
+            "start_date": "2026-10-15",
+            "end_date": "2026-10-21",
+            "regions": [
+              "North",
+              "South",
+              "East",
+              "West"
+            ],
+            "channels": [
+              "online"
+            ],
+            "value": 4475299,
+            "rows_scanned": 27
+          }
+        }
+      ]
+    },
+    "gated": {
+      "run_at": "2026-10-22T09:30:08.973Z",
+      "model": "openai · gpt-5.5",
+      "verdict": "correct",
+      "outcome": "decline",
+      "value": null,
+      "message": "I can’t report Online GMV for the last 7 days reliably. The data check found a blocker: no rows for South online on 2026-10-19, even though the loads are marked complete. I won’t estimate a number from incomplete data.",
+      "usage": {
+        "input_tokens": 1188,
+        "output_tokens": 137
+      },
+      "seconds": 6.6,
+      "trace": [
+        {
+          "tool": "check_readiness",
+          "input": {
+            "question": "Online GMV for the last 7 days",
+            "metric_id": null
+          },
+          "output": {
+            "decision": "BLOCKED",
+            "headline": "Gross sales can't be reported reliably for this request.",
+            "blockers": [
+              "No rows for South online on 2026-10-19, although the loads are marked complete."
+            ],
+            "metric": {
+              "id": "gross_sales",
+              "label": "Gross sales",
+              "formula": "gross",
+              "version": "1.0",
+              "owner": "Arjun Mehta · Sales Operations"
+            },
+            "scope": {
+              "metric_candidates": [
+                "gross_sales"
+              ],
+              "period": {
+                "start": "2026-10-15",
+                "end": "2026-10-21"
+              },
+              "regions": [
+                "East",
+                "North",
+                "South",
+                "West"
+              ],
+              "channels": [
+                "online"
+              ],
+              "role": "analyst"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "consistency": {
+    "baseline": {
+      "runs": 3,
+      "same_as_shown": 3
+    },
+    "gated": {
+      "runs": 3,
+      "same_as_shown": 3
+    }
+  }
+}
