@@ -129,8 +129,12 @@ mark { background: var(--mark); color: inherit; padding: 0 2px; border-radius: 2
 .pair > div { border-top: 2px solid var(--ink); padding-top: 12px; min-width: 0; }
 .pair p { font-size: 16px; }
 .quote { font-family: var(--display); font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.8px; line-height: 1.15; margin: 8px 0 0; text-wrap: balance; }
-ol.plain, ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
 ol.plain li, ul.plain li { margin-bottom: 8px; }
+/* Numbered lists: the number sits in a small grey circle, like the steps in the recorded runs. */
+ol.plain { list-style: none; counter-reset: n; padding: 0; margin: 0 0 14px; }
+ol.plain > li { counter-increment: n; position: relative; padding-left: 36px; }
+ol.plain > li::before { content: counter(n); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%; background: var(--soft); color: var(--muted); font: 500 12px/24px var(--mono); text-align: center; }
 </style>
 
 <div class="page">
